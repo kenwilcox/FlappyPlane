@@ -13,7 +13,7 @@
 		BEAC54551A01178E00823F1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEAC54531A01178E00823F1B /* Main.storyboard */; };
 		BEAC54571A01178E00823F1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAC54561A01178E00823F1B /* Images.xcassets */; };
 		BEAC545A1A01178E00823F1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEAC54581A01178E00823F1B /* LaunchScreen.xib */; };
-		BEAC54661A01178E00823F1B /* FlappyPlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54651A01178E00823F1B /* FlappyPlaneTests.m */; };
+		BEAC54661A01178E00823F1B /* TappyPlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54651A01178E00823F1B /* TappyPlaneTests.m */; };
 		BEAC54711A0118C300823F1B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BEAC546F1A0118C300823F1B /* LICENSE */; };
 		BEAC54751A0119F800823F1B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54741A0119F800823F1B /* GameScene.m */; };
 		BEAC54901A01288700823F1B /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BEAC548F1A01288700823F1B /* Planes.atlas */; };
@@ -25,12 +25,12 @@
 			containerPortal = BEAC54391A01178E00823F1B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BEAC54401A01178E00823F1B;
-			remoteInfo = FlappyPlane;
+			remoteInfo = TappyPlane;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BEAC54411A01178E00823F1B /* FlappyPlane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyPlane.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAC54411A01178E00823F1B /* TappyPlane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappyPlane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAC54451A01178E00823F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEAC54461A01178E00823F1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BEAC54481A01178E00823F1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,9 +40,9 @@
 		BEAC54541A01178E00823F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEAC54561A01178E00823F1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BEAC54591A01178E00823F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		BEAC545F1A01178E00823F1B /* FlappyPlaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyPlaneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAC545F1A01178E00823F1B /* TappyPlaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TappyPlaneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAC54641A01178E00823F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEAC54651A01178E00823F1B /* FlappyPlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlappyPlaneTests.m; sourceTree = "<group>"; };
+		BEAC54651A01178E00823F1B /* TappyPlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TappyPlaneTests.m; sourceTree = "<group>"; };
 		BEAC546F1A0118C300823F1B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BEAC54701A0118C300823F1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BEAC54731A0119F800823F1B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
@@ -73,8 +73,8 @@
 			children = (
 				BEAC546F1A0118C300823F1B /* LICENSE */,
 				BEAC54701A0118C300823F1B /* README.md */,
-				BEAC54431A01178E00823F1B /* FlappyPlane */,
-				BEAC54621A01178E00823F1B /* FlappyPlaneTests */,
+				BEAC54431A01178E00823F1B /* TappyPlane */,
+				BEAC54621A01178E00823F1B /* TappyPlaneTests */,
 				BEAC54421A01178E00823F1B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,13 +82,13 @@
 		BEAC54421A01178E00823F1B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BEAC54411A01178E00823F1B /* FlappyPlane.app */,
-				BEAC545F1A01178E00823F1B /* FlappyPlaneTests.xctest */,
+				BEAC54411A01178E00823F1B /* TappyPlane.app */,
+				BEAC545F1A01178E00823F1B /* TappyPlaneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BEAC54431A01178E00823F1B /* FlappyPlane */ = {
+		BEAC54431A01178E00823F1B /* TappyPlane */ = {
 			isa = PBXGroup;
 			children = (
 				BEAC548F1A01288700823F1B /* Planes.atlas */,
@@ -103,7 +103,7 @@
 				BEAC54581A01178E00823F1B /* LaunchScreen.xib */,
 				BEAC54441A01178E00823F1B /* Supporting Files */,
 			);
-			path = FlappyPlane;
+			path = TappyPlane;
 			sourceTree = "<group>";
 		};
 		BEAC54441A01178E00823F1B /* Supporting Files */ = {
@@ -115,13 +115,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BEAC54621A01178E00823F1B /* FlappyPlaneTests */ = {
+		BEAC54621A01178E00823F1B /* TappyPlaneTests */ = {
 			isa = PBXGroup;
 			children = (
-				BEAC54651A01178E00823F1B /* FlappyPlaneTests.m */,
+				BEAC54651A01178E00823F1B /* TappyPlaneTests.m */,
 				BEAC54631A01178E00823F1B /* Supporting Files */,
 			);
-			path = FlappyPlaneTests;
+			path = TappyPlaneTests;
 			sourceTree = "<group>";
 		};
 		BEAC54631A01178E00823F1B /* Supporting Files */ = {
@@ -135,9 +135,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BEAC54401A01178E00823F1B /* FlappyPlane */ = {
+		BEAC54401A01178E00823F1B /* TappyPlane */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEAC54691A01178E00823F1B /* Build configuration list for PBXNativeTarget "FlappyPlane" */;
+			buildConfigurationList = BEAC54691A01178E00823F1B /* Build configuration list for PBXNativeTarget "TappyPlane" */;
 			buildPhases = (
 				BEAC543D1A01178E00823F1B /* Sources */,
 				BEAC543E1A01178E00823F1B /* Frameworks */,
@@ -147,14 +147,14 @@
 			);
 			dependencies = (
 			);
-			name = FlappyPlane;
-			productName = FlappyPlane;
-			productReference = BEAC54411A01178E00823F1B /* FlappyPlane.app */;
+			name = TappyPlane;
+			productName = TappyPlane;
+			productReference = BEAC54411A01178E00823F1B /* TappyPlane.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BEAC545E1A01178E00823F1B /* FlappyPlaneTests */ = {
+		BEAC545E1A01178E00823F1B /* TappyPlaneTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEAC546C1A01178E00823F1B /* Build configuration list for PBXNativeTarget "FlappyPlaneTests" */;
+			buildConfigurationList = BEAC546C1A01178E00823F1B /* Build configuration list for PBXNativeTarget "TappyPlaneTests" */;
 			buildPhases = (
 				BEAC545B1A01178E00823F1B /* Sources */,
 				BEAC545C1A01178E00823F1B /* Frameworks */,
@@ -165,9 +165,9 @@
 			dependencies = (
 				BEAC54611A01178E00823F1B /* PBXTargetDependency */,
 			);
-			name = FlappyPlaneTests;
-			productName = FlappyPlaneTests;
-			productReference = BEAC545F1A01178E00823F1B /* FlappyPlaneTests.xctest */;
+			name = TappyPlaneTests;
+			productName = TappyPlaneTests;
+			productReference = BEAC545F1A01178E00823F1B /* TappyPlaneTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -188,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BEAC543C1A01178E00823F1B /* Build configuration list for PBXProject "FlappyPlane" */;
+			buildConfigurationList = BEAC543C1A01178E00823F1B /* Build configuration list for PBXProject "TappyPlane" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -201,8 +201,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BEAC54401A01178E00823F1B /* FlappyPlane */,
-				BEAC545E1A01178E00823F1B /* FlappyPlaneTests */,
+				BEAC54401A01178E00823F1B /* TappyPlane */,
+				BEAC545E1A01178E00823F1B /* TappyPlaneTests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,7 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEAC54661A01178E00823F1B /* FlappyPlaneTests.m in Sources */,
+				BEAC54661A01178E00823F1B /* TappyPlaneTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +254,7 @@
 /* Begin PBXTargetDependency section */
 		BEAC54611A01178E00823F1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BEAC54401A01178E00823F1B /* FlappyPlane */;
+			target = BEAC54401A01178E00823F1B /* TappyPlane */;
 			targetProxy = BEAC54601A01178E00823F1B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -359,9 +359,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FlappyPlane/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TappyPlane/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TappyPlane;
 			};
 			name = Debug;
 		};
@@ -369,9 +369,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FlappyPlane/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TappyPlane/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TappyPlane;
 			};
 			name = Release;
 		};
@@ -387,10 +387,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FlappyPlaneTests/Info.plist;
+				INFOPLIST_FILE = TappyPlaneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlappyPlane.app/FlappyPlane";
+				PRODUCT_NAME = TappyPlaneTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TappyPlane.app/TappyPlane";
 			};
 			name = Debug;
 		};
@@ -402,17 +402,17 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FlappyPlaneTests/Info.plist;
+				INFOPLIST_FILE = TappyPlaneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlappyPlane.app/FlappyPlane";
+				PRODUCT_NAME = TappyPlaneTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TappyPlane.app/TappyPlane";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEAC543C1A01178E00823F1B /* Build configuration list for PBXProject "FlappyPlane" */ = {
+		BEAC543C1A01178E00823F1B /* Build configuration list for PBXProject "TappyPlane" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEAC54671A01178E00823F1B /* Debug */,
@@ -421,7 +421,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEAC54691A01178E00823F1B /* Build configuration list for PBXNativeTarget "FlappyPlane" */ = {
+		BEAC54691A01178E00823F1B /* Build configuration list for PBXNativeTarget "TappyPlane" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEAC546A1A01178E00823F1B /* Debug */,
@@ -429,7 +429,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		BEAC546C1A01178E00823F1B /* Build configuration list for PBXNativeTarget "FlappyPlaneTests" */ = {
+		BEAC546C1A01178E00823F1B /* Build configuration list for PBXNativeTarget "TappyPlaneTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEAC546D1A01178E00823F1B /* Debug */,

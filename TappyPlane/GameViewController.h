@@ -1,6 +1,6 @@
 //
 //  GameViewController.h
-//  FlappyPlane
+//  TappyPlane
 //
 
 //  Copyright (c) 2014 Kenneth Wilcox. All rights reserved.
