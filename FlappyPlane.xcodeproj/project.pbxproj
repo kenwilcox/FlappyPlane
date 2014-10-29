@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		BEAC54471A01178E00823F1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54461A01178E00823F1B /* main.m */; };
 		BEAC544A1A01178E00823F1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54491A01178E00823F1B /* AppDelegate.m */; };
-		BEAC544D1A01178E00823F1B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC544C1A01178E00823F1B /* GameScene.m */; };
-		BEAC544F1A01178E00823F1B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BEAC544E1A01178E00823F1B /* GameScene.sks */; };
 		BEAC54521A01178E00823F1B /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54511A01178E00823F1B /* GameViewController.m */; };
 		BEAC54551A01178E00823F1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEAC54531A01178E00823F1B /* Main.storyboard */; };
 		BEAC54571A01178E00823F1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAC54561A01178E00823F1B /* Images.xcassets */; };
 		BEAC545A1A01178E00823F1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEAC54581A01178E00823F1B /* LaunchScreen.xib */; };
 		BEAC54661A01178E00823F1B /* FlappyPlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54651A01178E00823F1B /* FlappyPlaneTests.m */; };
+		BEAC54711A0118C300823F1B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BEAC546F1A0118C300823F1B /* LICENSE */; };
+		BEAC54751A0119F800823F1B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54741A0119F800823F1B /* GameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +34,6 @@
 		BEAC54461A01178E00823F1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BEAC54481A01178E00823F1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BEAC54491A01178E00823F1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BEAC544B1A01178E00823F1B /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		BEAC544C1A01178E00823F1B /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		BEAC544E1A01178E00823F1B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BEAC54501A01178E00823F1B /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		BEAC54511A01178E00823F1B /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		BEAC54541A01178E00823F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +42,10 @@
 		BEAC545F1A01178E00823F1B /* FlappyPlaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyPlaneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAC54641A01178E00823F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEAC54651A01178E00823F1B /* FlappyPlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlappyPlaneTests.m; sourceTree = "<group>"; };
+		BEAC546F1A0118C300823F1B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BEAC54701A0118C300823F1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BEAC54731A0119F800823F1B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		BEAC54741A0119F800823F1B /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,8 @@
 		BEAC54381A01178E00823F1B = {
 			isa = PBXGroup;
 			children = (
+				BEAC546F1A0118C300823F1B /* LICENSE */,
+				BEAC54701A0118C300823F1B /* README.md */,
 				BEAC54431A01178E00823F1B /* FlappyPlane */,
 				BEAC54621A01178E00823F1B /* FlappyPlaneTests */,
 				BEAC54421A01178E00823F1B /* Products */,
@@ -88,9 +91,8 @@
 			children = (
 				BEAC54481A01178E00823F1B /* AppDelegate.h */,
 				BEAC54491A01178E00823F1B /* AppDelegate.m */,
-				BEAC544B1A01178E00823F1B /* GameScene.h */,
-				BEAC544C1A01178E00823F1B /* GameScene.m */,
-				BEAC544E1A01178E00823F1B /* GameScene.sks */,
+				BEAC54731A0119F800823F1B /* GameScene.h */,
+				BEAC54741A0119F800823F1B /* GameScene.m */,
 				BEAC54501A01178E00823F1B /* GameViewController.h */,
 				BEAC54511A01178E00823F1B /* GameViewController.m */,
 				BEAC54531A01178E00823F1B /* Main.storyboard */,
@@ -209,8 +211,8 @@
 			files = (
 				BEAC545A1A01178E00823F1B /* LaunchScreen.xib in Resources */,
 				BEAC54571A01178E00823F1B /* Images.xcassets in Resources */,
-				BEAC544F1A01178E00823F1B /* GameScene.sks in Resources */,
 				BEAC54551A01178E00823F1B /* Main.storyboard in Resources */,
+				BEAC54711A0118C300823F1B /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +232,7 @@
 			files = (
 				BEAC54521A01178E00823F1B /* GameViewController.m in Sources */,
 				BEAC544A1A01178E00823F1B /* AppDelegate.m in Sources */,
-				BEAC544D1A01178E00823F1B /* GameScene.m in Sources */,
+				BEAC54751A0119F800823F1B /* GameScene.m in Sources */,
 				BEAC54471A01178E00823F1B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
