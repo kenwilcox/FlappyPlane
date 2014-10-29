@@ -7,6 +7,12 @@
 //
 
 #import "GameScene.h"
+#import "Plane.h"
+
+@interface GameScene ()
+@property (nonatomic) Plane *player;
+@property (nonatomic) SKNode *world;
+@end
 
 @implementation GameScene
 
@@ -15,21 +21,14 @@
   if (!(self = [super initWithSize:size]))
     return nil;
   
-  SKSpriteNode *plane1 = [SKSpriteNode spriteNodeWithImageNamed:@"planeBlue1"];
-  plane1.position = CGPointMake(50, 50);
-  [self addChild:plane1];
+  // Setup world
+  _world = [SKNode node];
+  [self addChild:_world];
   
-  SKSpriteNode *plane2 = [SKSpriteNode spriteNodeWithImageNamed:@"planeGreen1"];
-  plane2.position = CGPointMake(100, 50);
-  [self addChild:plane2];
-  
-  SKSpriteNode *plane3 = [SKSpriteNode spriteNodeWithImageNamed:@"planeRed1"];
-  plane3.position = CGPointMake(150, 50);
-  [self addChild:plane3];
-  
-  SKSpriteNode *plane4 = [SKSpriteNode spriteNodeWithImageNamed:@"planeYellow1"];
-  plane4.position = CGPointMake(200, 50);
-  [self addChild:plane4];
+  // Setup player
+  _player = [[Plane alloc] init];
+  _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+  [_world addChild:_player];
   
   return self;
 }

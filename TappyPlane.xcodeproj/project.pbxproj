@@ -17,6 +17,7 @@
 		BEAC54711A0118C300823F1B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BEAC546F1A0118C300823F1B /* LICENSE */; };
 		BEAC54751A0119F800823F1B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54741A0119F800823F1B /* GameScene.m */; };
 		BEAC54901A01288700823F1B /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BEAC548F1A01288700823F1B /* Planes.atlas */; };
+		BEB78AD51A012FBA002D2CBF /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB78AD41A012FBA002D2CBF /* Plane.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		BEAC54731A0119F800823F1B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		BEAC54741A0119F800823F1B /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		BEAC548F1A01288700823F1B /* Planes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Planes.atlas; sourceTree = "<group>"; };
+		BEB78AD31A012FBA002D2CBF /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
+		BEB78AD41A012FBA002D2CBF /* Plane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plane.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 				BEAC54741A0119F800823F1B /* GameScene.m */,
 				BEAC54501A01178E00823F1B /* GameViewController.h */,
 				BEAC54511A01178E00823F1B /* GameViewController.m */,
+				BEB78AD31A012FBA002D2CBF /* Plane.h */,
+				BEB78AD41A012FBA002D2CBF /* Plane.m */,
 				BEAC54531A01178E00823F1B /* Main.storyboard */,
 				BEAC54561A01178E00823F1B /* Images.xcassets */,
 				BEAC54581A01178E00823F1B /* LaunchScreen.xib */,
@@ -236,6 +241,7 @@
 			files = (
 				BEAC54521A01178E00823F1B /* GameViewController.m in Sources */,
 				BEAC544A1A01178E00823F1B /* AppDelegate.m in Sources */,
+				BEB78AD51A012FBA002D2CBF /* Plane.m in Sources */,
 				BEAC54751A0119F800823F1B /* GameScene.m in Sources */,
 				BEAC54471A01178E00823F1B /* main.m in Sources */,
 			);
@@ -428,6 +434,7 @@
 				BEAC546B1A01178E00823F1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEAC546C1A01178E00823F1B /* Build configuration list for PBXNativeTarget "TappyPlaneTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +443,7 @@
 				BEAC546E1A01178E00823F1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
