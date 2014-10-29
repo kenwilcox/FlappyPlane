@@ -16,6 +16,7 @@
 		BEAC54661A01178E00823F1B /* FlappyPlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54651A01178E00823F1B /* FlappyPlaneTests.m */; };
 		BEAC54711A0118C300823F1B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BEAC546F1A0118C300823F1B /* LICENSE */; };
 		BEAC54751A0119F800823F1B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54741A0119F800823F1B /* GameScene.m */; };
+		BEAC54901A01288700823F1B /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BEAC548F1A01288700823F1B /* Planes.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		BEAC54701A0118C300823F1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BEAC54731A0119F800823F1B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		BEAC54741A0119F800823F1B /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		BEAC548F1A01288700823F1B /* Planes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Planes.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		BEAC54431A01178E00823F1B /* FlappyPlane */ = {
 			isa = PBXGroup;
 			children = (
+				BEAC548F1A01288700823F1B /* Planes.atlas */,
 				BEAC54481A01178E00823F1B /* AppDelegate.h */,
 				BEAC54491A01178E00823F1B /* AppDelegate.m */,
 				BEAC54731A0119F800823F1B /* GameScene.h */,
@@ -212,6 +215,7 @@
 				BEAC545A1A01178E00823F1B /* LaunchScreen.xib in Resources */,
 				BEAC54571A01178E00823F1B /* Images.xcassets in Resources */,
 				BEAC54551A01178E00823F1B /* Main.storyboard in Resources */,
+				BEAC54901A01288700823F1B /* Planes.atlas in Resources */,
 				BEAC54711A0118C300823F1B /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
