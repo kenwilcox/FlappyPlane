@@ -10,4 +10,6 @@
 
 @interface Plane : SKSpriteNode
 
+- (void)setRandomColor;
+
 @end

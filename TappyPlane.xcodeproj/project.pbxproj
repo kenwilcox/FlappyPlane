@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0BEA4B1A02678200EFAA53 /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE0BEA4A1A02678200EFAA53 /* PlaneAnimations.plist */; };
 		BEAC54471A01178E00823F1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54461A01178E00823F1B /* main.m */; };
 		BEAC544A1A01178E00823F1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54491A01178E00823F1B /* AppDelegate.m */; };
 		BEAC54521A01178E00823F1B /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54511A01178E00823F1B /* GameViewController.m */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE0BEA4A1A02678200EFAA53 /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
 		BEAC54411A01178E00823F1B /* TappyPlane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappyPlane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAC54451A01178E00823F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEAC54461A01178E00823F1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE0BEA4C1A02692800EFAA53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE0BEA4A1A02678200EFAA53 /* PlaneAnimations.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		BEAC54381A01178E00823F1B = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		BEAC54431A01178E00823F1B /* TappyPlane */ = {
 			isa = PBXGroup;
 			children = (
+				BE0BEA4C1A02692800EFAA53 /* Resources */,
 				BEAC548F1A01288700823F1B /* Planes.atlas */,
 				BEAC54481A01178E00823F1B /* AppDelegate.h */,
 				BEAC54491A01178E00823F1B /* AppDelegate.m */,
@@ -221,6 +232,7 @@
 				BEAC54571A01178E00823F1B /* Images.xcassets in Resources */,
 				BEAC54551A01178E00823F1B /* Main.storyboard in Resources */,
 				BEAC54901A01288700823F1B /* Planes.atlas in Resources */,
+				BE0BEA4B1A02678200EFAA53 /* PlaneAnimations.plist in Resources */,
 				BEAC54711A0118C300823F1B /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
