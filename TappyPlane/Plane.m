@@ -9,8 +9,10 @@
 #import "Plane.h"
 
 @interface Plane()
-  @property (nonatomic) NSMutableArray *planeAnimations;
+@property (nonatomic) NSMutableArray *planeAnimations;
 @end
+
+static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 
 @implementation Plane
 
@@ -44,9 +46,25 @@
   return [SKAction repeatActionForever:[SKAction animateWithTextures:frames timePerFrame:frameTime resize:NO restore:NO]];
 }
 
+- (void)setEngineRunning:(BOOL)engineRunning
+{
+  _engineRunning = engineRunning;
+  if (engineRunning) {
+    [self actionForKey:kKeyPlaneAnimation].speed = 1;
+  }
+  else {
+    [self actionForKey:kKeyPlaneAnimation].speed = 0;
+  }
+}
+
 - (void)setRandomColor
 {
-  [self runAction:self.planeAnimations[arc4random_uniform(self.planeAnimations.count)]];
+  [self removeActionForKey:kKeyPlaneAnimation];
+  SKAction *animation = self.planeAnimations[arc4random_uniform(self.planeAnimations.count)];
+  [self runAction:animation withKey:kKeyPlaneAnimation];
+  if (!self.engineRunning) {
+    [self actionForKey:kKeyPlaneAnimation].speed = 0;
+  }
 }
 
 @end

@@ -9,7 +9,7 @@
 #import "GameScene.h"
 #import "Plane.h"
 
-@interface GameScene ()
+@interface GameScene()
 @property (nonatomic) Plane *player;
 @property (nonatomic) SKNode *world;
 @end
@@ -36,7 +36,8 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 //  for (UITouch *touch in touches) {
-    [self.player setRandomColor];
+  self.player.engineRunning = !self.player.engineRunning;
+  [self.player setRandomColor];
 //  }
 }
 
