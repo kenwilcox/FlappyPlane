@@ -25,6 +25,10 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   if (!(self = [super initWithImageNamed:@"planeBlue1"]))
     return nil;
   
+  // Setup physics body
+  self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.width * 0.5];
+  self.physicsBody.mass = 0.08;
+  
   // Load animation plist
   _planeAnimations = [[NSMutableArray alloc] init];
   NSString *path = [[NSBundle mainBundle] pathForResource:@"PlaneAnimations" ofType:@"plist"];
@@ -64,6 +68,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 {
   _engineRunning = engineRunning;
   if (engineRunning) {
+    self.puffTrailEmitter.targetNode = self.parent;
     [self actionForKey:kKeyPlaneAnimation].speed = 1;
     self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
   }
@@ -80,6 +85,13 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   [self runAction:animation withKey:kKeyPlaneAnimation];
   if (!self.engineRunning) {
     [self actionForKey:kKeyPlaneAnimation].speed = 0;
+  }
+}
+
+- (void)update
+{
+  if (self.accelerating) {
+    [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
   }
 }
 
