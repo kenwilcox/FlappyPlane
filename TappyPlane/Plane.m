@@ -54,7 +54,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 - (SKAction *)animationFromArray:(NSArray *)textureNames withDuration:(CGFloat)duration
 {
   NSMutableArray *frames = [[NSMutableArray alloc] init];
-  SKTextureAtlas *planesAtlas = [SKTextureAtlas atlasNamed:@"Planes"];
+  SKTextureAtlas *planesAtlas = [SKTextureAtlas atlasNamed:@"Graphics"];
   
   for (NSString *textureName in textureNames) {
     [frames addObject:[planesAtlas textureNamed:textureName]];
