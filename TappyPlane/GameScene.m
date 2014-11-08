@@ -25,6 +25,9 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   if (!(self = [super initWithSize:size]))
     return nil;
   
+  // Set background color to sky blue
+  self.backgroundColor = [SKColor colorWithRed:0.835294118 green:0.929411765 blue:0.968627451 alpha:1.0];
+  
   // Get atlas file
   SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
   
@@ -43,7 +46,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   
   // Setup background
   _background = [[ScrollingLayer alloc] initWithTiles:backgroudTiles];
-  _background.position = CGPointZero;
+  _background.position = CGPointMake(0, 30);
   _background.horizontalScrollSpeed = -60;
   _background.scrolling = YES;
   [_world addChild:_background];
