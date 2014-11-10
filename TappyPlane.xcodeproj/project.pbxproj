@@ -24,6 +24,7 @@
 		BEAC54901A01288700823F1B /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BEAC548F1A01288700823F1B /* Graphics.atlas */; };
 		BEB78AD51A012FBA002D2CBF /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB78AD41A012FBA002D2CBF /* Plane.m */; };
 		BEF829571A1129A5003EE93B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF829561A1129A5003EE93B /* Constants.m */; };
+		BEF8295A1A114900003EE93B /* ObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF829591A114900003EE93B /* ObstacleLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		BEB78AD41A012FBA002D2CBF /* Plane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plane.m; sourceTree = "<group>"; };
 		BEF829551A1129A5003EE93B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		BEF829561A1129A5003EE93B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		BEF829581A114900003EE93B /* ObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObstacleLayer.h; sourceTree = "<group>"; };
+		BEF829591A114900003EE93B /* ObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObstacleLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				BEB78AD31A012FBA002D2CBF /* Plane.h */,
 				BEB78AD41A012FBA002D2CBF /* Plane.m */,
 				BEAC54531A01178E00823F1B /* Main.storyboard */,
+				BEF829581A114900003EE93B /* ObstacleLayer.h */,
+				BEF829591A114900003EE93B /* ObstacleLayer.m */,
 				BE7344001A0D029900BB04B8 /* ScrollingLayer.h */,
 				BE7344011A0D029900BB04B8 /* ScrollingLayer.m */,
 				BE7343FD1A0D00BC00BB04B8 /* ScrollingNode.h */,
@@ -282,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF8295A1A114900003EE93B /* ObstacleLayer.m in Sources */,
 				BEAC54521A01178E00823F1B /* GameViewController.m in Sources */,
 				BEAC544A1A01178E00823F1B /* AppDelegate.m in Sources */,
 				BE7344021A0D029900BB04B8 /* ScrollingLayer.m in Sources */,
