@@ -43,14 +43,14 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   self.physicsBody.categoryBitMask = kCategoryPlane;
   self.physicsBody.contactTestBitMask = kCategoryGround;
 
-#if DEBUG
-  SKShapeNode *bodyShape = [SKShapeNode node];
-  bodyShape.path = path;
-  bodyShape.strokeColor = [SKColor redColor];
-  bodyShape.lineWidth = 2.0;
-  bodyShape.zPosition = 99.0;
-  [self addChild:bodyShape];
-#endif
+//#if DEBUG
+//  SKShapeNode *bodyShape = [SKShapeNode node];
+//  bodyShape.path = path;
+//  bodyShape.strokeColor = [SKColor redColor];
+//  bodyShape.lineWidth = 2.0;
+//  bodyShape.zPosition = 99.0;
+//  [self addChild:bodyShape];
+//#endif
   
   // Load animation plist
   _planeAnimations = [[NSMutableArray alloc] init];
@@ -143,6 +143,10 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 {
   if (self.accelerating) {
     [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
+  }
+  
+  if(!self.crashed){
+    self.zRotation = fmaxf(fminf(self.physicsBody.velocity.dy * 0.5, 400), -400) / 400;
   }
 }
 
