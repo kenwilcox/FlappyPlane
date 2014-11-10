@@ -10,12 +10,14 @@
 #import "Plane.h"
 #import "ScrollingLayer.h"
 #import "Constants.h"
+#import "ObstacleLayer.h"
 
 @interface GameScene()
 @property (nonatomic) Plane *player;
 @property (nonatomic) SKNode *world;
 @property (nonatomic) ScrollingLayer *background;
 @property (nonatomic) ScrollingLayer *foreground;
+@property (nonatomic) ObstacleLayer *obstacles;
 @end
 
 static const CGFloat kMinFPS = 10.00 / 60.00;
@@ -52,6 +54,14 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   _background.horizontalScrollSpeed = -60;
   _background.scrolling = YES;
   [_world addChild:_background];
+  
+  // Setup obstacle layer
+  _obstacles = [[ObstacleLayer alloc] init];
+  _obstacles.horizontalScrollSpeed = -70;
+  _obstacles.scrolling = YES;
+  _obstacles.floor = 0.0;
+  _obstacles.ceiling = self.size.height;
+  [_world addChild:_obstacles];
   
   // Setup foreground
   _foreground = [[ScrollingLayer alloc] initWithTiles:@[[self generateGroundTile],[self generateGroundTile],[self generateGroundTile]]];
@@ -123,9 +133,15 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 {
   // Reset layers
   self.foreground.position = CGPointZero;
-  self.background.position = CGPointMake(0, 30);
   [self.foreground layoutTiles];
+  
+  self.obstacles.position = CGPointZero;
+  [self.obstacles reset];
+  self.obstacles.scrolling = NO;
+  
+  self.background.position = CGPointMake(0, 30);
   [self.background layoutTiles];
+
   
   // Reset plane
   self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
@@ -139,9 +155,10 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
     if (self.player.crashed) {
       [self newGame];
     } else {
-      //self.player.engineRunning = !self.player.engineRunning;
+      self.player.engineRunning = !self.player.engineRunning;
       _player.physicsBody.affectedByGravity = YES;
       self.player.accelerating = YES;
+      self.obstacles.scrolling = YES;
     }
 //  }
 }
@@ -150,7 +167,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 {
   //for (UITouch *touch in touches) {
   self.player.accelerating = NO;
-  //self.player.engineRunning = NO;
+  self.player.engineRunning = NO;
   //}
 }
 
@@ -167,6 +184,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   if (!self.player.crashed) {
     [self.background updateWithTimeElapsed:timeElapsed];
     [self.foreground updateWithTimeElapsed:timeElapsed];
+    [self.obstacles updateWithTimeElapsed:timeElapsed];
   }
 }
 
