@@ -120,21 +120,42 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   return sprite;
 }
 
+- (void)newGame
+{
+  // Reset layers
+  self.foreground.position = CGPointZero;
+  self.background.position = CGPointMake(0, 30);
+  [self.foreground layoutTiles];
+  [self.background layoutTiles];
+  
+  // Reset plane
+  self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+  self.player.crashed = NO;
+  self.player.engineRunning = YES;
+  self.player.physicsBody.affectedByGravity = NO;
+  self.player.physicsBody.velocity = CGVectorMake(0.0, 0.0);
+  self.zRotation = 0.0;
+  self.physicsBody.angularVelocity = 0.0;
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-  //for (UITouch *touch in touches) {
-  self.player.engineRunning = !self.player.engineRunning;
-  //[self.player setRandomColor];
-  _player.physicsBody.affectedByGravity = YES;
-  self.player.accelerating = YES;
-  //}
+//  for (UITouch *touch in touches) {
+    if (self.player.crashed) {
+      [self newGame];
+    } else {
+      //self.player.engineRunning = !self.player.engineRunning;
+      _player.physicsBody.affectedByGravity = YES;
+      self.player.accelerating = YES;
+    }
+//  }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
   //for (UITouch *touch in touches) {
   self.player.accelerating = NO;
-  self.player.engineRunning = NO;
+  //self.player.engineRunning = NO;
   //}
 }
 

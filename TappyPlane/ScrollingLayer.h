@@ -11,5 +11,6 @@
 @interface ScrollingLayer : ScrollingNode
 
 - (instancetype)initWithTiles:(NSArray *)tileSpriteNodes;
+- (void)layoutTiles;
 
 @end
