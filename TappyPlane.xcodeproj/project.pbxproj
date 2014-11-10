@@ -23,6 +23,7 @@
 		BEAC54751A0119F800823F1B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54741A0119F800823F1B /* GameScene.m */; };
 		BEAC54901A01288700823F1B /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BEAC548F1A01288700823F1B /* Graphics.atlas */; };
 		BEB78AD51A012FBA002D2CBF /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB78AD41A012FBA002D2CBF /* Plane.m */; };
+		BEF829571A1129A5003EE93B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF829561A1129A5003EE93B /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		BEAC548F1A01288700823F1B /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 		BEB78AD31A012FBA002D2CBF /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
 		BEB78AD41A012FBA002D2CBF /* Plane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plane.m; sourceTree = "<group>"; };
+		BEF829551A1129A5003EE93B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		BEF829561A1129A5003EE93B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				BE87D58B1A0B2DDF00B1B2CA /* Particle Effects */,
 				BE0BEA4C1A02692800EFAA53 /* Resources */,
 				BEAC548F1A01288700823F1B /* Graphics.atlas */,
+				BEF829551A1129A5003EE93B /* Constants.h */,
+				BEF829561A1129A5003EE93B /* Constants.m */,
 				BEAC54481A01178E00823F1B /* AppDelegate.h */,
 				BEAC54491A01178E00823F1B /* AppDelegate.m */,
 				BEAC54731A0119F800823F1B /* GameScene.h */,
@@ -280,6 +285,7 @@
 				BEAC54521A01178E00823F1B /* GameViewController.m in Sources */,
 				BEAC544A1A01178E00823F1B /* AppDelegate.m in Sources */,
 				BE7344021A0D029900BB04B8 /* ScrollingLayer.m in Sources */,
+				BEF829571A1129A5003EE93B /* Constants.m in Sources */,
 				BEB78AD51A012FBA002D2CBF /* Plane.m in Sources */,
 				BEAC54751A0119F800823F1B /* GameScene.m in Sources */,
 				BEAC54471A01178E00823F1B /* main.m in Sources */,

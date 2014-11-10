@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "Plane.h"
 #import "ScrollingLayer.h"
+#import "Constants.h"
 
 @interface GameScene()
 @property (nonatomic) Plane *player;
@@ -34,6 +35,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   
   // Setup physics
   self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
+  self.physicsWorld.contactDelegate = self;
   
   // Setup world
   _world = [SKNode node];
@@ -104,6 +106,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   CGPathAddLineToPoint(path, NULL, 0 - offsetX, 17 - offsetY);
   
   sprite.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
+  sprite.physicsBody.categoryBitMask = kCategoryGround;
 
 #if DEBUG
     SKShapeNode *bodyShape = [SKShapeNode node];
@@ -145,8 +148,21 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   lastCallTime = currentTime;
   
   [self.player update];
-  [self.background updateWithTimeElapsed:timeElapsed];
-  [self.foreground updateWithTimeElapsed:timeElapsed];
+  if (!self.player.crashed) {
+    [self.background updateWithTimeElapsed:timeElapsed];
+    [self.foreground updateWithTimeElapsed:timeElapsed];
+  }
+}
+
+#pragma mark SKPhysicsContactDelegate methods
+
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+  if (contact.bodyA.categoryBitMask == kCategoryPlane) {
+    [self.player collide:contact.bodyB];
+  } else if (contact.bodyB.categoryBitMask == kCategoryPlane) {
+    [self.player collide:contact.bodyA];
+  }
 }
 
 @end

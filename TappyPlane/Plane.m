@@ -7,6 +7,7 @@
 //
 
 #import "Plane.h"
+#import "Constants.h"
 
 @interface Plane()
 
@@ -39,6 +40,8 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   CGPathCloseSubpath(path);
   self.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
   self.physicsBody.mass = 0.08;
+  self.physicsBody.categoryBitMask = kCategoryPlane;
+  self.physicsBody.contactTestBitMask = kCategoryGround;
 
 #if DEBUG
   SKShapeNode *bodyShape = [SKShapeNode node];
@@ -84,9 +87,10 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   return [SKAction repeatActionForever:[SKAction animateWithTextures:frames timePerFrame:frameTime resize:NO restore:NO]];
 }
 
+# pragma mark Setters
 - (void)setEngineRunning:(BOOL)engineRunning
 {
-  _engineRunning = engineRunning;
+  _engineRunning = engineRunning && ! self.crashed;
   if (engineRunning) {
     self.puffTrailEmitter.targetNode = self.parent;
     [self actionForKey:kKeyPlaneAnimation].speed = 1;
@@ -95,6 +99,20 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   else {
     [self actionForKey:kKeyPlaneAnimation].speed = 0;
     self.puffTrailEmitter.particleBirthRate = 0;
+  }
+}
+
+- (void)setAccelerating:(BOOL)accelerating
+{
+  _accelerating = accelerating && !self.crashed;
+}
+
+- (void)setCrashed:(BOOL)crashed
+{
+  _crashed = crashed;
+  if (crashed) {
+    self.engineRunning = NO;
+    self.accelerating = NO;
   }
 }
 
@@ -108,10 +126,21 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   }
 }
 
+# pragma mark Methods
+
 - (void)update
 {
   if (self.accelerating) {
     [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
+  }
+}
+
+- (void)collide:(SKPhysicsBody *)body
+{
+  if (!self.crashed) {
+    if (body.categoryBitMask == kCategoryGround) {
+      self.crashed = YES;
+    }
   }
 }
 
