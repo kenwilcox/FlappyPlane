@@ -73,7 +73,55 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 - (SKSpriteNode*)generateGroundTile
 {
   SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
-  return [SKSpriteNode spriteNodeWithTexture:[graphics textureNamed:@"groundGrass"]];
+  SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:[graphics textureNamed:@"groundGrass"]];
+  sprite.anchorPoint = CGPointZero;
+  
+  CGFloat offsetX = sprite.frame.size.width * sprite.anchorPoint.x;
+  CGFloat offsetY = sprite.frame.size.height * sprite.anchorPoint.y;
+  
+  CGMutablePathRef path = CGPathCreateMutable();
+  
+  CGPathMoveToPoint(path, NULL, 403 - offsetX, 17 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 383 - offsetX, 22 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 373 - offsetX, 34 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 329 - offsetX, 33 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 318 - offsetX, 23 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 298 - offsetX, 22 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 286 - offsetX, 7 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 267 - offsetX, 8 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 256 - offsetX, 13 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 235 - offsetX, 13 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 219 - offsetX, 28 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 187 - offsetX, 28 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 174 - offsetX, 21 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 155 - offsetX, 22 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 125 - offsetX, 33 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 79 - offsetX, 30 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 67 - offsetX, 18 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 45 - offsetX, 12 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 20 - offsetX, 14 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 17 - offsetX, 18 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 0 - offsetX, 17 - offsetY);
+  //CGPathAddLineToPoint(path, NULL, 0 - offsetX, 0 - offsetY);
+  //CGPathAddLineToPoint(path, NULL, 403 - offsetX, 0 - offsetY);
+  
+//  CGPathMoveToPoint(path, NULL, 403 - offsetX, 15 - offsetY);
+//  CGPathAddLineToPoint(path, NULL, 367 - offsetX, 35 - offsetY);
+//  CGPathAddLineToPoint(path, NULL, 329 - offsetX, 34 - offsetY);
+//  CGPathAddLineToPoint(path, NULL, 287 - offsetX, 7 - offsetY);
+//  CGPathAddLineToPoint(path, NULL, 235 - offsetX, 11 - offsetY);
+//  CGPathAddLineToPoint(path, NULL, 205 - offsetX, 28 - offsetY);
+//  CGPathAddLineToPoint(path, NULL, 168 - offsetX, 20 - offsetY);
+//  CGPathAddLineToPoint(path, NULL, 122 - offsetX, 33 - offsetY);
+//  CGPathAddLineToPoint(path, NULL, 76 - offsetX, 31 - offsetY);
+//  CGPathAddLineToPoint(path, NULL, 46 - offsetX, 11 - offsetY);
+//  CGPathAddLineToPoint(path, NULL, 0 - offsetX, 16 - offsetY);
+
+//  CGPathCloseSubpath(path);
+  
+  sprite.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
+  
+  return sprite;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
