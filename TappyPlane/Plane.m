@@ -17,6 +17,7 @@
 
 @end
 
+static const CGFloat kMaxAltitude = 300.0;
 static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 
 @implementation Plane
@@ -141,7 +142,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 
 - (void)update
 {
-  if (self.accelerating) {
+  if (self.accelerating && self.position.y < kMaxAltitude) {
     [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
   }
   
