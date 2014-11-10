@@ -22,6 +22,19 @@ static NSString *const kKeyMountainDown = @"MountainDown";
 
 @implementation ObstacleLayer
 
+- (instancetype)init
+{
+  if (!(self = [super init]))
+    return nil;
+  
+  for (int i = 0; i < 5; i++) {
+    [self createObjectForKey:kKeyMountainUp].position = CGPointMake(-1000, 0);
+    [self createObjectForKey:kKeyMountainDown].position = CGPointMake(-1000, 0);
+  }
+  
+  return self;
+}
+
 - (void)reset
 {
   // Loop through child nodes and reposition for reuse
