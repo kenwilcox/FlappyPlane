@@ -107,14 +107,14 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   sprite.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
   sprite.physicsBody.categoryBitMask = kCategoryGround;
 
-#if DEBUG
-    SKShapeNode *bodyShape = [SKShapeNode node];
-    bodyShape.path = path;
-    bodyShape.strokeColor = [SKColor redColor];
-    bodyShape.lineWidth = 2.0;
-    bodyShape.zPosition = 99.0;
-    [sprite addChild:bodyShape];
-#endif
+//#if DEBUG
+//    SKShapeNode *bodyShape = [SKShapeNode node];
+//    bodyShape.path = path;
+//    bodyShape.strokeColor = [SKColor redColor];
+//    bodyShape.lineWidth = 2.0;
+//    bodyShape.zPosition = 99.0;
+//    [sprite addChild:bodyShape];
+//#endif
   
   return sprite;
 }
