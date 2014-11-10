@@ -22,6 +22,19 @@ static NSString *const kKeyMountainDown = @"MountainDown";
 
 @implementation ObstacleLayer
 
+- (void)reset
+{
+  // Loop through child nodes and reposition for reuse
+  for (SKNode *node in self.children) {
+    node.position = CGPointMake(-1000, 0);
+  }
+  
+  // Reposition marker
+  if (self.scene) {
+    self.marker = self.scene.size.width + kMarkerBuffer;
+  }
+}
+
 - (void)updateWithTimeElapsed:(NSTimeInterval)timeElapsed
 {
   [super updateWithTimeElapsed:timeElapsed];
