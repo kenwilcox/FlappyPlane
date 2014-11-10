@@ -10,4 +10,7 @@
 
 @interface ObstacleLayer : ScrollingNode
 
+@property (nonatomic) CGFloat floor;
+@property (nonatomic) CGFloat ceiling;
+
 @end
