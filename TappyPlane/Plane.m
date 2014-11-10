@@ -25,14 +25,34 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   if (!(self = [super initWithImageNamed:@"planeBlue1"]))
     return nil;
   
-  // Setup physics body
-  self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.width * 0.5];
+  // Setup physics body with path
+  CGFloat offsetX = self.frame.size.width * self.anchorPoint.x;
+  CGFloat offsetY = self.frame.size.height * self.anchorPoint.y;
+  CGMutablePathRef path = CGPathCreateMutable();
+  CGPathMoveToPoint(path, NULL, 43 - offsetX, 18 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 34 - offsetX, 36 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 11 - offsetX, 35 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 0 - offsetX, 28 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 10 - offsetX, 4 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 29 - offsetX, 0 - offsetY);
+  CGPathAddLineToPoint(path, NULL, 37 - offsetX, 5 - offsetY);
+  CGPathCloseSubpath(path);
+  self.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
   self.physicsBody.mass = 0.08;
+
+#if DEBUG
+  SKShapeNode *bodyShape = [SKShapeNode node];
+  bodyShape.path = path;
+  bodyShape.strokeColor = [SKColor redColor];
+  bodyShape.lineWidth = 2.0;
+  bodyShape.zPosition = 99.0;
+  [self addChild:bodyShape];
+#endif
   
   // Load animation plist
   _planeAnimations = [[NSMutableArray alloc] init];
-  NSString *path = [[NSBundle mainBundle] pathForResource:@"PlaneAnimations" ofType:@"plist"];
-  NSDictionary *animations = [NSDictionary dictionaryWithContentsOfFile:path];
+  NSString *animationPlistPath = [[NSBundle mainBundle] pathForResource:@"PlaneAnimations" ofType:@"plist"];
+  NSDictionary *animations = [NSDictionary dictionaryWithContentsOfFile:animationPlistPath];
   for (NSString *key in animations) {
     [self.planeAnimations addObject:[self animationFromArray:[animations objectForKey:key] withDuration:0.4]];
   }
