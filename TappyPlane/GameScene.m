@@ -49,14 +49,12 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   
   // Setup background
   _background = [[ScrollingLayer alloc] initWithTiles:backgroudTiles];
-  _background.position = CGPointMake(0, 30);
   _background.horizontalScrollSpeed = -60;
   _background.scrolling = YES;
   [_world addChild:_background];
   
   // Setup foreground
   _foreground = [[ScrollingLayer alloc] initWithTiles:@[[self generateGroundTile],[self generateGroundTile],[self generateGroundTile]]];
-  _foreground.position = CGPointZero;
   _foreground.horizontalScrollSpeed = -80;
   _foreground.scrolling = YES;
   [_world addChild:_foreground];
@@ -67,7 +65,8 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   _player.physicsBody.affectedByGravity = NO;
 
   [_world addChild:_player];
-  _player.engineRunning = YES; // The setter updates the parent, has to be after addChild
+  
+  [self newGame];
   
   return self;
 }
@@ -130,12 +129,8 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   
   // Reset plane
   self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
-  self.player.crashed = NO;
-  self.player.engineRunning = YES;
   self.player.physicsBody.affectedByGravity = NO;
-  self.player.physicsBody.velocity = CGVectorMake(0.0, 0.0);
-  self.zRotation = 0.0;
-  self.physicsBody.angularVelocity = 0.0;
+  [self.player reset];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

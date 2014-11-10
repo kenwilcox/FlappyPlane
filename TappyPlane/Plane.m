@@ -74,6 +74,17 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   return self;
 }
 
+- (void)reset
+{
+  self.crashed = NO;
+  self.engineRunning = YES;
+  self.physicsBody.velocity = CGVectorMake(0.0, 0.0);
+  self.zRotation = 0.0;
+  self.physicsBody.angularVelocity = 0.0;
+  
+  [self setRandomColor];
+}
+
 - (SKAction *)animationFromArray:(NSArray *)textureNames withDuration:(CGFloat)duration
 {
   NSMutableArray *frames = [[NSMutableArray alloc] init];
