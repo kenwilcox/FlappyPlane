@@ -102,24 +102,17 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   CGPathAddLineToPoint(path, NULL, 20 - offsetX, 14 - offsetY);
   CGPathAddLineToPoint(path, NULL, 17 - offsetX, 18 - offsetY);
   CGPathAddLineToPoint(path, NULL, 0 - offsetX, 17 - offsetY);
-  //CGPathAddLineToPoint(path, NULL, 0 - offsetX, 0 - offsetY);
-  //CGPathAddLineToPoint(path, NULL, 403 - offsetX, 0 - offsetY);
-  
-//  CGPathMoveToPoint(path, NULL, 403 - offsetX, 15 - offsetY);
-//  CGPathAddLineToPoint(path, NULL, 367 - offsetX, 35 - offsetY);
-//  CGPathAddLineToPoint(path, NULL, 329 - offsetX, 34 - offsetY);
-//  CGPathAddLineToPoint(path, NULL, 287 - offsetX, 7 - offsetY);
-//  CGPathAddLineToPoint(path, NULL, 235 - offsetX, 11 - offsetY);
-//  CGPathAddLineToPoint(path, NULL, 205 - offsetX, 28 - offsetY);
-//  CGPathAddLineToPoint(path, NULL, 168 - offsetX, 20 - offsetY);
-//  CGPathAddLineToPoint(path, NULL, 122 - offsetX, 33 - offsetY);
-//  CGPathAddLineToPoint(path, NULL, 76 - offsetX, 31 - offsetY);
-//  CGPathAddLineToPoint(path, NULL, 46 - offsetX, 11 - offsetY);
-//  CGPathAddLineToPoint(path, NULL, 0 - offsetX, 16 - offsetY);
-
-//  CGPathCloseSubpath(path);
   
   sprite.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
+
+#if DEBUG
+    SKShapeNode *bodyShape = [SKShapeNode node];
+    bodyShape.path = path;
+    bodyShape.strokeColor = [SKColor redColor];
+    bodyShape.lineWidth = 2.0;
+    bodyShape.zPosition = 99.0;
+    [sprite addChild:bodyShape];
+#endif
   
   return sprite;
 }
