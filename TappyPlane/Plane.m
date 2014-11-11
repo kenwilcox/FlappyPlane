@@ -39,10 +39,12 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   CGPathAddLineToPoint(path, NULL, 29 - offsetX, 0 - offsetY);
   CGPathAddLineToPoint(path, NULL, 37 - offsetX, 5 - offsetY);
   CGPathCloseSubpath(path);
+  
   self.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
   self.physicsBody.mass = 0.08;
   self.physicsBody.categoryBitMask = kCategoryPlane;
-  self.physicsBody.contactTestBitMask = kCategoryGround;
+  self.physicsBody.contactTestBitMask = kCategoryGround | kCategoryCollectable;
+  self.physicsBody.collisionBitMask = kCategoryGround;
 
 //#if DEBUG
 //  SKShapeNode *bodyShape = [SKShapeNode node];
@@ -182,6 +184,10 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   if (!self.crashed) {
     if (body.categoryBitMask == kCategoryGround) {
       self.crashed = YES;
+    }
+    
+    if (body.categoryBitMask == kCategoryCollectable) {
+      [body.node runAction:[SKAction removeFromParent]];
     }
   }
 }
