@@ -114,17 +114,21 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
   }
 }
 
-//- (void)setAccelerating:(BOOL)accelerating
-//{
-//  _accelerating = accelerating && !self.crashed;
-//}
+#if !FLAP
+- (void)setAccelerating:(BOOL)accelerating
+{
+  _accelerating = accelerating && !self.crashed;
+}
+#endif
 
 - (void)setCrashed:(BOOL)crashed
 {
   _crashed = crashed;
   if (crashed) {
     self.engineRunning = NO;
-//    self.accelerating = NO;
+#if !FLAP
+    self.accelerating = NO;
+#endif
   }
 }
 
@@ -140,6 +144,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 
 # pragma mark Methods
 
+#if FLAP
 - (void)flap
 {
   if (!self.crashed && self.position.y < kMaxAltitude) {
@@ -157,12 +162,15 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     }
   }
 }
+#endif
 
 - (void)update
 {
-//  if (self.accelerating && self.position.y < kMaxAltitude) {
-//    [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
-//  }
+#if !FLAP
+  if (self.accelerating && self.position.y < kMaxAltitude) {
+    [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
+  }
+#endif
   
   if(!self.crashed){
     self.zRotation = fmaxf(fminf(self.physicsBody.velocity.dy * 0.5, 400), -400) / 400;

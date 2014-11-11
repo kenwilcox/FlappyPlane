@@ -36,7 +36,11 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
   
   // Setup physics
+#if FLAP
   self.physicsWorld.gravity = CGVectorMake(0.0, -4.0);
+#else
+  self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
+#endif
   self.physicsWorld.contactDelegate = self;
   
   // Setup world
@@ -155,10 +159,13 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
     if (self.player.crashed) {
       [self newGame];
     } else {
-//      self.player.engineRunning = !self.player.engineRunning;
+#if FLAP
       [_player flap];
+#else
+      self.player.engineRunning = !self.player.engineRunning;
+      self.player.accelerating = YES;
+#endif
       _player.physicsBody.affectedByGravity = YES;
-//      self.player.accelerating = YES;
       self.obstacles.scrolling = YES;
     }
 //  }
@@ -167,8 +174,10 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
   //for (UITouch *touch in touches) {
-//  self.player.accelerating = NO;
-//  self.player.engineRunning = NO;
+#if !FLAP
+  self.player.accelerating = NO;
+  self.player.engineRunning = NO;
+#endif
   //}
 }
 
