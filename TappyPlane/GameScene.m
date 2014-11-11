@@ -11,6 +11,7 @@
 #import "ScrollingLayer.h"
 #import "Constants.h"
 #import "ObstacleLayer.h"
+#import "BitmapFontLabel.h"
 
 @interface GameScene()
 @property (nonatomic) Plane *player;
@@ -18,6 +19,8 @@
 @property (nonatomic) ScrollingLayer *background;
 @property (nonatomic) ScrollingLayer *foreground;
 @property (nonatomic) ObstacleLayer *obstacles;
+@property (nonatomic) BitmapFontLabel *scoreLabel;
+@property (nonatomic) NSInteger score;
 @end
 
 static const CGFloat kMinFPS = 10.00 / 60.00;
@@ -76,10 +79,13 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   
   // Setup player
   _player = [[Plane alloc] init];
-  _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
   _player.physicsBody.affectedByGravity = NO;
-
   [_world addChild:_player];
+  
+  // Setup score label
+  _scoreLabel = [[BitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
+  _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 30);
+  [self addChild:_scoreLabel];
   
   [self newGame];
   
@@ -147,18 +153,27 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   self.background.position = CGPointMake(0, 30);
   [self.background layoutTiles];
 
+  // Reset score;
+  self.score = 0;
   
   // Reset plane
-  self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+  self.player.position = CGPointMake(self.size.width * 0.3, self.size.height * 0.5);
   self.player.physicsBody.affectedByGravity = NO;
   [self.player reset];
+}
+
+- (void)setScore:(NSInteger)score
+{
+  _score = score;
+  self.scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)score];
 }
 
 # pragma mark CollectableDelegate methods
 
 - (void)wasCollected:(Collectable *)collectable
 {
-  NSLog(@"Colelcted item worth %ld points", (long)collectable.pointValue);
+  self.score += collectable.pointValue;
+  
 }
 
 #pragma mark UIResponder delegates
