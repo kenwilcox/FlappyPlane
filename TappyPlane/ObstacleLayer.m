@@ -8,6 +8,7 @@
 
 #import "ObstacleLayer.h"
 #import "Constants.h"
+#import "TilesetTextureProvider.h"
 
 @interface ObstacleLayer()
 @property (nonatomic) CGFloat marker;
@@ -40,8 +41,14 @@ static NSString *const kKeyCollectableStar = @"CollectableStar";
 
 - (void)reset
 {
-  // Loop through child nodes and reposition for reuse
+  // Loop through child nodes and reposition for reuse and update texture
   for (SKNode *node in self.children) {
+    if (node.name == kKeyMountainUp) {
+      ((SKSpriteNode *) node).texture = [[TilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"];
+    }
+    if (node.name == kKeyMountainDown) {
+      ((SKSpriteNode *) node).texture = [[TilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"];
+    }
     node.position = CGPointMake(-1000, 0);
   }
   
@@ -118,7 +125,7 @@ static NSString *const kKeyCollectableStar = @"CollectableStar";
   SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
   
   if (key == kKeyMountainUp) {
-    object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrass"]];
+    object = [SKSpriteNode spriteNodeWithTexture:[[TilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"]];
     
     CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
     CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
@@ -135,7 +142,7 @@ static NSString *const kKeyCollectableStar = @"CollectableStar";
     [self addChild:object];
   }
   else if (key == kKeyMountainDown) {
-    object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrassDown"]];
+    object = [SKSpriteNode spriteNodeWithTexture:[[TilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"]];
     
     CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
     CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;

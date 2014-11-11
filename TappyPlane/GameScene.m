@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "ObstacleLayer.h"
 #import "BitmapFontLabel.h"
+#import "TilesetTextureProvider.h"
 
 @interface GameScene()
 @property (nonatomic) Plane *player;
@@ -142,8 +143,15 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 
 - (void)newGame
 {
+  // Randomize tileset
+  [[TilesetTextureProvider getProvider] randomizeTileset];
+  
   // Reset layers
   self.foreground.position = CGPointZero;
+  for (SKSpriteNode *node in self.foreground.children) {
+    node.texture = [[TilesetTextureProvider getProvider] getTextureForKey:@"ground"];
+  }
+  
   [self.foreground layoutTiles];
   
   self.obstacles.position = CGPointZero;
