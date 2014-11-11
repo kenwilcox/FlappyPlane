@@ -40,11 +40,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
   
   // Setup physics
-#if FLAP
   self.physicsWorld.gravity = CGVectorMake(0.0, -4.0);
-#else
-  self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
-#endif
   self.physicsWorld.contactDelegate = self;
   
   // Setup world
