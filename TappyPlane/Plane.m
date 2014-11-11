@@ -8,6 +8,7 @@
 
 #import "Plane.h"
 #import "Constants.h"
+#import "Collectable.h"
 
 @interface Plane()
 
@@ -187,7 +188,8 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     }
     
     if (body.categoryBitMask == kCategoryCollectable) {
-      [body.node runAction:[SKAction removeFromParent]];
+      if ([body.node respondsToSelector:@selector(collect)])
+        [body.node performSelector:@selector(collect)];
     }
   }
 }
