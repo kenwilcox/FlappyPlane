@@ -158,7 +158,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 
 - (void)wasCollected:(Collectable *)collectable
 {
-  NSLog(@"Colelcted item worth %d points", collectable.pointValue);
+  NSLog(@"Colelcted item worth %ld points", (long)collectable.pointValue);
 }
 
 #pragma mark UIResponder delegates

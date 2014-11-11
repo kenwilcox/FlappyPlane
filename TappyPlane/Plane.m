@@ -138,7 +138,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 - (void)setRandomColor
 {
   [self removeActionForKey:kKeyPlaneAnimation];
-  SKAction *animation = self.planeAnimations[arc4random_uniform(self.planeAnimations.count)];
+  SKAction *animation = self.planeAnimations[arc4random_uniform((uint)self.planeAnimations.count)];
   [self runAction:animation withKey:kKeyPlaneAnimation];
   if (!self.engineRunning) {
     [self actionForKey:kKeyPlaneAnimation].speed = 0;
@@ -188,8 +188,11 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     }
     
     if (body.categoryBitMask == kCategoryCollectable) {
-      if ([body.node respondsToSelector:@selector(collect)])
-        [body.node performSelector:@selector(collect)];
+      if ([body.node respondsToSelector:@selector(collect)]) {
+        //[body.node performSelector:@selector(collect)];
+        [(Collectable *)body.node collect];
+      }
+      
     }
   }
 }
