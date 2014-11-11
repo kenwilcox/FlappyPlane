@@ -12,5 +12,6 @@
 
 const uint32_t kCategoryPlane = 0x1 << 0;
 const uint32_t kCategoryGround = 0x1 << 1;
+const uint32_t kCategoryCollectable = 0x1 << 2;
 
 @end

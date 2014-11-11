@@ -16,9 +16,12 @@
 static const CGFloat kMarkerBuffer = 200.0;
 static const CGFloat kVerticalGap = 90.0;
 static const CGFloat kSpaceBetweenObstacleSets = 180.0;
+static const CGFloat kCollectableClearance = 50.0;
+static const int kCollectableVerticalRange = 200.0;
 
 static NSString *const kKeyMountainUp = @"MountainUp";
 static NSString *const kKeyMountainDown = @"MountainDown";
+static NSString *const kKeyCollectableStar = @"CollectableStar";
 
 @implementation ObstacleLayer
 
@@ -76,6 +79,16 @@ static NSString *const kKeyMountainDown = @"MountainDown";
   // Postion mountain nodes
   mountainUp.position = CGPointMake(self.marker, self.floor + (mountainUp.size.height * 0.5) - yAdjustment);
   mountainDown.position = CGPointMake(self.marker, mountainUp.position.y + mountainDown.size.height + kVerticalGap);
+  
+  // Get collectable star node
+  SKSpriteNode *collectable = [self getUnusedObjectForKey:kKeyCollectableStar];
+  
+  // Position collectable
+  CGFloat midPoint = mountainUp.position.y + (mountainUp.size.height * 0.5) + (kVerticalGap * 0.5);
+  CGFloat yPosition = midPoint + arc4random_uniform(kCollectableVerticalRange) - (kCollectableVerticalRange * 0.5);
+  yPosition = fmaxf(yPosition, self.floor + kCollectableClearance);
+  yPosition = fminf(yPosition, self.ceiling - kCollectableClearance);
+  collectable.position = CGPointMake(self.marker + (kSpaceBetweenObstacleSets * 0.5), yPosition);
   
   // Reposition marker
   self.marker += kSpaceBetweenObstacleSets;
@@ -136,6 +149,13 @@ static NSString *const kKeyMountainDown = @"MountainDown";
     object.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
     object.physicsBody.categoryBitMask = kCategoryGround;
     
+    [self addChild:object];
+  }
+  else if (key == kKeyCollectableStar) {
+    object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
+    object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
+    object.physicsBody.categoryBitMask = kCategoryCollectable;
+    object.physicsBody.dynamic = NO;
     [self addChild:object];
   }
   

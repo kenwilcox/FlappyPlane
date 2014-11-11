@@ -12,5 +12,6 @@
 
 extern const uint32_t kCategoryPlane;
 extern const uint32_t kCategoryGround;
+extern const uint32_t kCategoryCollectable;
 
 @end
