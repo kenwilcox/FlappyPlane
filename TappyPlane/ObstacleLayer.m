@@ -152,7 +152,9 @@ static NSString *const kKeyCollectableStar = @"CollectableStar";
     [self addChild:object];
   }
   else if (key == kKeyCollectableStar) {
-    object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
+    object = [Collectable spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
+    ((Collectable *)object).pointValue = 1;
+    ((Collectable *)object).delegate = self.collectableDelegate;
     object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
     object.physicsBody.categoryBitMask = kCategoryCollectable;
     object.physicsBody.dynamic = NO;
