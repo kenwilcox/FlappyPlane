@@ -10,6 +10,7 @@
 		BE0BEA4B1A02678200EFAA53 /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE0BEA4A1A02678200EFAA53 /* PlaneAnimations.plist */; };
 		BE37C3941A11CA91006632FC /* Collectable.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37C3931A11CA91006632FC /* Collectable.m */; };
 		BE37C3971A11D5C5006632FC /* BitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37C3961A11D5C5006632FC /* BitmapFontLabel.m */; };
+		BE37C3991A11E32E006632FC /* TilesetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE37C3981A11E32E006632FC /* TilesetGraphics.plist */; };
 		BE7343FF1A0D00BC00BB04B8 /* ScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7343FE1A0D00BC00BB04B8 /* ScrollingNode.m */; };
 		BE7344021A0D029900BB04B8 /* ScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7344011A0D029900BB04B8 /* ScrollingLayer.m */; };
 		BE87D58E1A0B2E2100B1B2CA /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE87D58C1A0B2E2100B1B2CA /* PlanePuffTrail.sks */; };
@@ -45,6 +46,7 @@
 		BE37C3931A11CA91006632FC /* Collectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collectable.m; sourceTree = "<group>"; };
 		BE37C3951A11D5C5006632FC /* BitmapFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapFontLabel.h; sourceTree = "<group>"; };
 		BE37C3961A11D5C5006632FC /* BitmapFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapFontLabel.m; sourceTree = "<group>"; };
+		BE37C3981A11E32E006632FC /* TilesetGraphics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TilesetGraphics.plist; sourceTree = "<group>"; };
 		BE7343FD1A0D00BC00BB04B8 /* ScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingNode.h; sourceTree = "<group>"; };
 		BE7343FE1A0D00BC00BB04B8 /* ScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingNode.m; sourceTree = "<group>"; };
 		BE7344001A0D029900BB04B8 /* ScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingLayer.h; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		BE0BEA4C1A02692800EFAA53 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE37C3981A11E32E006632FC /* TilesetGraphics.plist */,
 				BE0BEA4A1A02678200EFAA53 /* PlaneAnimations.plist */,
 			);
 			name = Resources;
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAC545A1A01178E00823F1B /* LaunchScreen.xib in Resources */,
+				BE37C3991A11E32E006632FC /* TilesetGraphics.plist in Resources */,
 				BEAC54571A01178E00823F1B /* Images.xcassets in Resources */,
 				BEAC54551A01178E00823F1B /* Main.storyboard in Resources */,
 				BEAC54901A01288700823F1B /* Graphics.atlas in Resources */,
