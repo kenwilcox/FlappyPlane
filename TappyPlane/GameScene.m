@@ -154,7 +154,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   [self.obstacles reset];
   self.obstacles.scrolling = NO;
   
-  self.background.position = CGPointMake(0, 30);
+  self.background.position = CGPointZero;
   [self.background layoutTiles];
 
   // Reset score;
@@ -191,7 +191,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 #if FLAP
       [_player flap];
 #else
-      self.player.engineRunning = !self.player.engineRunning;
+      //self.player.engineRunning = !self.player.engineRunning;
       self.player.accelerating = YES;
 #endif
       _player.physicsBody.affectedByGravity = YES;
@@ -205,7 +205,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   //for (UITouch *touch in touches) {
 #if !FLAP
   self.player.accelerating = NO;
-  self.player.engineRunning = NO;
+  //self.player.engineRunning = NO;
 #endif
   //}
 }
