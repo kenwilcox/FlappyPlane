@@ -11,6 +11,7 @@
 		BE37C3941A11CA91006632FC /* Collectable.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37C3931A11CA91006632FC /* Collectable.m */; };
 		BE37C3971A11D5C5006632FC /* BitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37C3961A11D5C5006632FC /* BitmapFontLabel.m */; };
 		BE37C3991A11E32E006632FC /* TilesetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE37C3981A11E32E006632FC /* TilesetGraphics.plist */; };
+		BE37C39C1A11E5BC006632FC /* TilesetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37C39B1A11E5BC006632FC /* TilesetTextureProvider.m */; };
 		BE7343FF1A0D00BC00BB04B8 /* ScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7343FE1A0D00BC00BB04B8 /* ScrollingNode.m */; };
 		BE7344021A0D029900BB04B8 /* ScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7344011A0D029900BB04B8 /* ScrollingLayer.m */; };
 		BE87D58E1A0B2E2100B1B2CA /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE87D58C1A0B2E2100B1B2CA /* PlanePuffTrail.sks */; };
@@ -47,6 +48,8 @@
 		BE37C3951A11D5C5006632FC /* BitmapFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapFontLabel.h; sourceTree = "<group>"; };
 		BE37C3961A11D5C5006632FC /* BitmapFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapFontLabel.m; sourceTree = "<group>"; };
 		BE37C3981A11E32E006632FC /* TilesetGraphics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TilesetGraphics.plist; sourceTree = "<group>"; };
+		BE37C39A1A11E5BC006632FC /* TilesetTextureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TilesetTextureProvider.h; sourceTree = "<group>"; };
+		BE37C39B1A11E5BC006632FC /* TilesetTextureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TilesetTextureProvider.m; sourceTree = "<group>"; };
 		BE7343FD1A0D00BC00BB04B8 /* ScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingNode.h; sourceTree = "<group>"; };
 		BE7343FE1A0D00BC00BB04B8 /* ScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingNode.m; sourceTree = "<group>"; };
 		BE7344001A0D029900BB04B8 /* ScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingLayer.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				BEAC548F1A01288700823F1B /* Graphics.atlas */,
 				BEF829551A1129A5003EE93B /* Constants.h */,
 				BEF829561A1129A5003EE93B /* Constants.m */,
+				BE37C39A1A11E5BC006632FC /* TilesetTextureProvider.h */,
+				BE37C39B1A11E5BC006632FC /* TilesetTextureProvider.m */,
 				BEAC54481A01178E00823F1B /* AppDelegate.h */,
 				BEAC54491A01178E00823F1B /* AppDelegate.m */,
 				BE37C3951A11D5C5006632FC /* BitmapFontLabel.h */,
@@ -310,6 +315,7 @@
 				BE37C3941A11CA91006632FC /* Collectable.m in Sources */,
 				BEAC54751A0119F800823F1B /* GameScene.m in Sources */,
 				BEAC54471A01178E00823F1B /* main.m in Sources */,
+				BE37C39C1A11E5BC006632FC /* TilesetTextureProvider.m in Sources */,
 				BE7343FF1A0D00BC00BB04B8 /* ScrollingNode.m in Sources */,
 				BE37C3971A11D5C5006632FC /* BitmapFontLabel.m in Sources */,
 			);
