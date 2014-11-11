@@ -61,6 +61,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   
   // Setup obstacle layer
   _obstacles = [[ObstacleLayer alloc] init];
+  _obstacles.collectableDelegate = self;
   _obstacles.horizontalScrollSpeed = -70;
   _obstacles.scrolling = YES;
   _obstacles.floor = 0.0;
@@ -153,6 +154,15 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   [self.player reset];
 }
 
+# pragma mark CollectableDelegate methods
+
+- (void)wasCollected:(Collectable *)collectable
+{
+  NSLog(@"Colelcted item worth %d points", collectable.pointValue);
+}
+
+#pragma mark UIResponder delegates
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 //  for (UITouch *touch in touches) {
@@ -180,6 +190,8 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 #endif
   //}
 }
+
+#pragma mark SKScene override
 
 - (void)update:(NSTimeInterval)currentTime
 {
