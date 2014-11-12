@@ -189,8 +189,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     
     if (body.categoryBitMask == kCategoryCollectable) {
       if ([body.node respondsToSelector:@selector(collect)]) {
-        //[body.node performSelector:@selector(collect)];
-        [(Collectable *)body.node collect];
+        [body.node performSelector:@selector(collect)];
       }
       
     }
