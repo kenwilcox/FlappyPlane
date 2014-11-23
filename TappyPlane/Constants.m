@@ -14,8 +14,10 @@ const uint32_t kCategoryPlane = 0x1 << 0;
 const uint32_t kCategoryGround = 0x1 << 1;
 const uint32_t kCategoryCollectable = 0x1 << 2;
 
-NSString *const kKeyMountainUp = @"MountainUp";
-NSString *const kKeyMountainDown = @"MountainDown";
+NSString *const kKeyMountainUp = @"mountainUp";
+NSString *const kKeyMountainDown = @"mountainDown";
+NSString *const kKeyMountainUpAlternate = @"mountainUpAlternate";
+NSString *const kKeyMountainDownAlternate = @"mountainDownAlternate";
 NSString *const kKeyCollectableStar = @"CollectableStar";
 
 @end

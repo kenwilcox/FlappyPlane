@@ -16,6 +16,8 @@ extern const uint32_t kCategoryCollectable;
 
 extern NSString *const kKeyMountainUp;
 extern NSString *const kKeyMountainDown;
+extern NSString *const kKeyMountainUpAlternate;
+extern NSString *const kKeyMountainDownAlternate;
 extern NSString *const kKeyCollectableStar;
 
 @end

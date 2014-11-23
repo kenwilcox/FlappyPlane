@@ -53,13 +53,13 @@
   [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainUp andPosition:CGPointMake(0, 105)]];
   [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainDown andPosition:CGPointMake(143, 250)]];
   [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyCollectableStar andPosition:CGPointMake(23, 290)]];
-  [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyCollectableStar andPosition:CGPointMake(128, 35)]];
+  [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyCollectableStar andPosition:CGPointMake(128, 50)]];
   [self.challenges addObject:challenge];
   
   // Challenge 2
   challenge = [NSMutableArray array];
   [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainUp andPosition:CGPointMake(90, 25)]];
-  [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainDown andPosition:CGPointMake(0, 232)]]; // <-- Alternate
+  [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainDownAlternate andPosition:CGPointMake(0, 232)]];
   [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyCollectableStar andPosition:CGPointMake(100, 243)]];
   [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyCollectableStar andPosition:CGPointMake(152, 205)]];
   [self.challenges addObject:challenge];
@@ -67,7 +67,7 @@
   // Challenge 3
   challenge = [NSMutableArray array];
   [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainUp andPosition:CGPointMake(0, 82)]];
-  [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainUp andPosition:CGPointMake(122, 0)]]; // <-- Alternate
+  [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainUpAlternate andPosition:CGPointMake(122, 0)]];
   [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainDown andPosition:CGPointMake(85, 320)]];
   [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyCollectableStar andPosition:CGPointMake(10, 213)]];
   [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyCollectableStar andPosition:CGPointMake(81, 116)]];
