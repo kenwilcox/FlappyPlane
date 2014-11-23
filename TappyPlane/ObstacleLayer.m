@@ -9,16 +9,17 @@
 #import "ObstacleLayer.h"
 #import "Constants.h"
 #import "TilesetTextureProvider.h"
+#import "ChallengeProvider.h"
 
 @interface ObstacleLayer()
 @property (nonatomic) CGFloat marker;
 @end
 
 static const CGFloat kMarkerBuffer = 200.0;
-static const CGFloat kVerticalGap = 90.0;
+//static const CGFloat kVerticalGap = 90.0;
 static const CGFloat kSpaceBetweenObstacleSets = 180.0;
-static const CGFloat kCollectableClearance = 50.0;
-static const int kCollectableVerticalRange = 200.0;
+//static const CGFloat kCollectableClearance = 50.0;
+//static const int kCollectableVerticalRange = 200.0;
 
 @implementation ObstacleLayer
 
@@ -39,11 +40,8 @@ static const int kCollectableVerticalRange = 200.0;
 {
   // Loop through child nodes and reposition for reuse and update texture
   for (SKNode *node in self.children) {
-    if (node.name == kKeyMountainUp) {
-      ((SKSpriteNode *) node).texture = [[TilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"];
-    }
-    if (node.name == kKeyMountainDown) {
-      ((SKSpriteNode *) node).texture = [[TilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"];
+    if (node.name == kKeyMountainUp || node.name == kKeyMountainDown || node.name == kKeyMountainUpAlternate || node.name == kKeyMountainDownAlternate) {
+      ((SKSpriteNode *) node).texture = [[TilesetTextureProvider getProvider] getTextureForKey:node.name];
     }
     node.position = CGPointMake(-1000, 0);
   }
@@ -71,6 +69,7 @@ static const int kCollectableVerticalRange = 200.0;
 
 - (void)addObstacleSet
 {
+  /*
   // Get mountain nodes
   SKSpriteNode *mountainUp = [self getUnusedObjectForKey:kKeyMountainUp];
   SKSpriteNode *mountainDown = [self getUnusedObjectForKey:kKeyMountainDown];
@@ -92,9 +91,21 @@ static const int kCollectableVerticalRange = 200.0;
   yPosition = fmaxf(yPosition, self.floor + kCollectableClearance);
   yPosition = fminf(yPosition, self.ceiling - kCollectableClearance);
   collectable.position = CGPointMake(self.marker + (kSpaceBetweenObstacleSets * 0.5), yPosition);
+  //*/
   
+  CGFloat furthestItem = 0;
+  //*
+  NSArray *challenge = [[ChallengeProvider getProvider] getRandomChallenge];
+  for (ChallengeItem *item in challenge) {
+    SKSpriteNode *object = [self getUnusedObjectForKey:item.obstacleKey];
+    object.position = CGPointMake(item.position.x + self.marker, item.position.y);
+    if (item.position.x > furthestItem) {
+      furthestItem = item.position.x;
+    }
+  }
+  //*/
   // Reposition marker
-  self.marker += kSpaceBetweenObstacleSets;
+  self.marker += furthestItem + kSpaceBetweenObstacleSets;
 }
 
 - (SKSpriteNode*)getUnusedObjectForKey:(NSString*)key
@@ -120,8 +131,8 @@ static const int kCollectableVerticalRange = 200.0;
   
   SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
   
-  if (key == kKeyMountainUp) {
-    object = [SKSpriteNode spriteNodeWithTexture:[[TilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"]];
+  if (key == kKeyMountainUp || key == kKeyMountainUpAlternate) {
+    object = [SKSpriteNode spriteNodeWithTexture:[[TilesetTextureProvider getProvider] getTextureForKey:key]];
     
     CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
     CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
@@ -137,8 +148,8 @@ static const int kCollectableVerticalRange = 200.0;
     
     [self addChild:object];
   }
-  else if (key == kKeyMountainDown) {
-    object = [SKSpriteNode spriteNodeWithTexture:[[TilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"]];
+  else if (key == kKeyMountainDown || key == kKeyMountainDownAlternate) {
+    object = [SKSpriteNode spriteNodeWithTexture:[[TilesetTextureProvider getProvider] getTextureForKey:key]];
     
     CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
     CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
