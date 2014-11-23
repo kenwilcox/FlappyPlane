@@ -7,6 +7,7 @@
 //
 
 #import "ChallengeProvider.h"
+#import "Constants.h"
 
 @implementation ChallengeItem
 
@@ -45,7 +46,17 @@
 
 - (void)loadChallenges
 {
+  self.challenges = [NSMutableArray array];
   
+  // Challenge 1
+  NSMutableArray *challenge = [NSMutableArray array];
+  [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainUp andPosition:CGPointMake(0,0)]];
+  [self.challenges addObject:challenge];
+  
+  // Challenge 2
+  challenge = [NSMutableArray array];
+  [challenge addObject:[ChallengeItem challengeItemWithKey:kKeyMountainUp andPosition:CGPointMake(0,0)]];
+  [self.challenges addObject:challenge];
 }
 
 @end
