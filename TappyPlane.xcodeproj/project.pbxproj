@@ -165,7 +165,6 @@
 				BEB78AD41A012FBA002D2CBF /* Plane.m */,
 				BE37C3921A11CA91006632FC /* Collectable.h */,
 				BE37C3931A11CA91006632FC /* Collectable.m */,
-				BEAC54531A01178E00823F1B /* Main.storyboard */,
 				BEF829581A114900003EE93B /* ObstacleLayer.h */,
 				BEF829591A114900003EE93B /* ObstacleLayer.m */,
 				BE7344001A0D029900BB04B8 /* ScrollingLayer.h */,
@@ -174,6 +173,7 @@
 				BE7343FE1A0D00BC00BB04B8 /* ScrollingNode.m */,
 				BEAC54561A01178E00823F1B /* Images.xcassets */,
 				BEAC54581A01178E00823F1B /* LaunchScreen.xib */,
+				BEAC54531A01178E00823F1B /* Main.storyboard */,
 				BEAC54441A01178E00823F1B /* Supporting Files */,
 			);
 			path = TappyPlane;
