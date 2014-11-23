@@ -14,4 +14,8 @@ extern const uint32_t kCategoryPlane;
 extern const uint32_t kCategoryGround;
 extern const uint32_t kCategoryCollectable;
 
+extern NSString *const kKeyMountainUp;
+extern NSString *const kKeyMountainDown;
+extern NSString *const kKeyCollectableStar;
+
 @end

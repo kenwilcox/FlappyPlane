@@ -20,10 +20,6 @@ static const CGFloat kSpaceBetweenObstacleSets = 180.0;
 static const CGFloat kCollectableClearance = 50.0;
 static const int kCollectableVerticalRange = 200.0;
 
-static NSString *const kKeyMountainUp = @"MountainUp";
-static NSString *const kKeyMountainDown = @"MountainDown";
-static NSString *const kKeyCollectableStar = @"CollectableStar";
-
 @implementation ObstacleLayer
 
 - (instancetype)init
