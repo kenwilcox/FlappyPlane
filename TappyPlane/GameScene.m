@@ -13,6 +13,7 @@
 #import "ObstacleLayer.h"
 #import "BitmapFontLabel.h"
 #import "TilesetTextureProvider.h"
+#import "Button.h"
 
 @interface GameScene()
 @property (nonatomic) Plane *player;
@@ -83,6 +84,12 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   _scoreLabel = [[BitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
   _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 30);
   [self addChild:_scoreLabel];
+  
+  // Setup test button
+  Button *button = [Button spriteNodeWithTexture:[graphics textureNamed:@"buttonPlay"]];
+  button.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+  button.zPosition = 1.0;
+  [self addChild:button];
   
   [self newGame];
   

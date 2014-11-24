@@ -40,6 +40,7 @@
   for (UITouch *touch in touches) {
     if (CGRectContainsPoint(self.frame, [touch locationInNode:self.parent])) {
       // Pressed button
+      
     }
   }
 }
