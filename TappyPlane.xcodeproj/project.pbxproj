@@ -13,6 +13,7 @@
 		BE37C3991A11E32E006632FC /* TilesetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE37C3981A11E32E006632FC /* TilesetGraphics.plist */; };
 		BE37C39C1A11E5BC006632FC /* TilesetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37C39B1A11E5BC006632FC /* TilesetTextureProvider.m */; };
 		BE51E2D31A21842300B987A9 /* ChallengeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BE51E2D21A21842300B987A9 /* ChallengeProvider.m */; };
+		BE51E2D61A22ECF500B987A9 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = BE51E2D51A22ECF500B987A9 /* Button.m */; };
 		BE7343FF1A0D00BC00BB04B8 /* ScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7343FE1A0D00BC00BB04B8 /* ScrollingNode.m */; };
 		BE7344021A0D029900BB04B8 /* ScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7344011A0D029900BB04B8 /* ScrollingLayer.m */; };
 		BE87D58E1A0B2E2100B1B2CA /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE87D58C1A0B2E2100B1B2CA /* PlanePuffTrail.sks */; };
@@ -53,6 +54,8 @@
 		BE37C39B1A11E5BC006632FC /* TilesetTextureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TilesetTextureProvider.m; sourceTree = "<group>"; };
 		BE51E2D11A21842300B987A9 /* ChallengeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeProvider.h; sourceTree = "<group>"; };
 		BE51E2D21A21842300B987A9 /* ChallengeProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeProvider.m; sourceTree = "<group>"; };
+		BE51E2D41A22ECF500B987A9 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		BE51E2D51A22ECF500B987A9 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		BE7343FD1A0D00BC00BB04B8 /* ScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingNode.h; sourceTree = "<group>"; };
 		BE7343FE1A0D00BC00BB04B8 /* ScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingNode.m; sourceTree = "<group>"; };
 		BE7344001A0D029900BB04B8 /* ScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingLayer.h; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				BEAC54511A01178E00823F1B /* GameViewController.m */,
 				BEB78AD31A012FBA002D2CBF /* Plane.h */,
 				BEB78AD41A012FBA002D2CBF /* Plane.m */,
+				BE51E2D41A22ECF500B987A9 /* Button.h */,
+				BE51E2D51A22ECF500B987A9 /* Button.m */,
 				BE37C3921A11CA91006632FC /* Collectable.h */,
 				BE37C3931A11CA91006632FC /* Collectable.m */,
 				BEF829581A114900003EE93B /* ObstacleLayer.h */,
@@ -312,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEF8295A1A114900003EE93B /* ObstacleLayer.m in Sources */,
+				BE51E2D61A22ECF500B987A9 /* Button.m in Sources */,
 				BEAC54521A01178E00823F1B /* GameViewController.m in Sources */,
 				BEAC544A1A01178E00823F1B /* AppDelegate.m in Sources */,
 				BE7344021A0D029900BB04B8 /* ScrollingLayer.m in Sources */,
