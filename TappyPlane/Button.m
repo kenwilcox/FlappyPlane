@@ -8,6 +8,12 @@
 
 #import "Button.h"
 
+@interface Button()
+
+@property (nonatomic) CGRect fullSizeFrame;
+
+@end
+
 @implementation Button
 
 + (instancetype)spriteNodeWithTexture:(SKTexture *)texture
@@ -20,13 +26,14 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+  self.fullSizeFrame = self.frame;
   [self touchesMoved:touches withEvent:event];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
   for (UITouch *touch in touches) {
-    if (CGRectContainsPoint(self.frame, [touch locationInNode:self.parent])) {
+    if (CGRectContainsPoint(self.fullSizeFrame, [touch locationInNode:self.parent])) {
       [self setScale:self.pressedScale];
     } else {
       [self setScale:1.0];
@@ -38,9 +45,9 @@
 {
   [self setScale:1.0];
   for (UITouch *touch in touches) {
-    if (CGRectContainsPoint(self.frame, [touch locationInNode:self.parent])) {
+    if (CGRectContainsPoint(self.fullSizeFrame, [touch locationInNode:self.parent])) {
       // Pressed button
-      
+      //objc_msgSend(self.pressedTarget, self.pressedAction);
     }
   }
 }
