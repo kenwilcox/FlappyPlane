@@ -7,6 +7,7 @@
 //
 
 #import "Button.h"
+#import <objc/message.h>
 
 @interface Button()
 
@@ -22,6 +23,12 @@
   instance.pressedScale = 0.9;
   instance.userInteractionEnabled = YES;
   return instance;
+}
+
+- (void)setPressedTarget:(id)pressedTarget withAction:(SEL)pressedAction
+{
+  _pressedTarget = pressedTarget;
+  _pressedAction = pressedAction;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -47,7 +54,17 @@
   for (UITouch *touch in touches) {
     if (CGRectContainsPoint(self.fullSizeFrame, [touch locationInNode:self.parent])) {
       // Pressed button
-      //objc_msgSend(self.pressedTarget, self.pressedAction);
+      //[self.pressedTarget performSelector:self.pressedAction]; // <-- Leak Warning
+      
+      // EXC_BAD_ACCESS
+      //id (*typed_msgSend)(id, SEL) = (void *)objc_msgSend;
+      //typed_msgSend(self.pressedTarget, self.pressedAction);
+      
+      // EXC_BAD_ACCESS
+      //((id (*)(id, SEL))objc_msgSend)(self.pressedTarget, self.pressedAction);
+      
+      // Disable "Enable Strict Checking of objc_msgSend calls" in project settings...
+      objc_msgSend(self.pressedTarget, self.pressedAction);
     }
   }
 }
