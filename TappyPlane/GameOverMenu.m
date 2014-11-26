@@ -10,4 +10,15 @@
 
 @implementation GameOverMenu
 
+- (instancetype)initWithSize:(CGSize)size;
+{
+  if (!(self = [super init]))
+    return nil;
+  _size = size;
+  
+  
+  
+  return self;
+}
+
 @end
