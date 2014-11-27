@@ -179,12 +179,12 @@
 				BE7344011A0D029900BB04B8 /* ScrollingLayer.m */,
 				BE7343FD1A0D00BC00BB04B8 /* ScrollingNode.h */,
 				BE7343FE1A0D00BC00BB04B8 /* ScrollingNode.m */,
+				BE416B431A25853D003BE0C1 /* GameOverMenu.h */,
+				BE416B441A25853D003BE0C1 /* GameOverMenu.m */,
 				BEAC54561A01178E00823F1B /* Images.xcassets */,
 				BEAC54581A01178E00823F1B /* LaunchScreen.xib */,
 				BEAC54531A01178E00823F1B /* Main.storyboard */,
 				BEAC54441A01178E00823F1B /* Supporting Files */,
-				BE416B431A25853D003BE0C1 /* GameOverMenu.h */,
-				BE416B441A25853D003BE0C1 /* GameOverMenu.m */,
 			);
 			path = TappyPlane;
 			sourceTree = "<group>";
