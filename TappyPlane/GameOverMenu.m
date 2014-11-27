@@ -8,6 +8,11 @@
 
 #import "GameOverMenu.h"
 
+@interface GameOverMenu()
+@property (nonatomic) SKSpriteNode *medalDisplay;
+@property (nonatomic) SKTextureAtlas *atlas;
+@end
+
 @implementation GameOverMenu
 
 - (instancetype)initWithSize:(CGSize)size;
@@ -16,14 +21,14 @@
     return nil;
   _size = size;
   
-  SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
+  _atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
   
   // Setup node to act as a group for panel elements
   SKNode *panelGroup = [SKNode node];
   [self addChild:panelGroup];
   
   // Setup background panel
-  SKSpriteNode *panelBackground = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"UIbg"]];
+  SKSpriteNode *panelBackground = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"UIbg"]];
   panelBackground.position = CGPointMake(size.width * 0.5, size.height - 150.00);
   CGFloat width = panelBackground.size.width;
   CGFloat height = panelBackground.size.height;
@@ -33,24 +38,51 @@
   [panelGroup addChild:panelBackground];
   
   // Setup score title
-  SKSpriteNode *scoreTitle = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"textScore"]];
+  SKSpriteNode *scoreTitle = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"textScore"]];
   scoreTitle.anchorPoint = CGPointMake(1.0, 1.0);
   scoreTitle.position = CGPointMake(CGRectGetMaxX(panelBackground.frame) -20, CGRectGetMaxY(panelBackground.frame) -10);
   [panelGroup addChild:scoreTitle];
   
   // Setup best title
-  SKSpriteNode *bestTitle = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"textBest"]];
+  SKSpriteNode *bestTitle = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"textBest"]];
   bestTitle.anchorPoint = CGPointMake(1.0, 1.0);
   bestTitle.position = CGPointMake(CGRectGetMaxX(panelBackground.frame) -20, CGRectGetMaxY(panelBackground.frame) -60);
   [panelGroup addChild:bestTitle];
   
   // Setup medal title
-  SKSpriteNode *medalTitle = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"textMedal"]];
+  SKSpriteNode *medalTitle = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"textMedal"]];
   medalTitle.anchorPoint = CGPointMake(0.0, 1.0);
   medalTitle.position = CGPointMake(CGRectGetMinX(panelBackground.frame) +20, CGRectGetMaxY(panelBackground.frame) -10);
   [panelGroup addChild:medalTitle];
   
+  // Setup display of medal
+  _medalDisplay = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"medalBlank"]];
+  _medalDisplay.anchorPoint = CGPointMake(0.5, 1.0);
+  _medalDisplay.position = CGPointMake(CGRectGetMidX(medalTitle.frame), CGRectGetMinY(medalTitle.frame) - 15);
+  [panelGroup addChild:_medalDisplay];
+  
+  // Set initial values
+  self.medal = MedalNone;
+  
   return self;
 }
 
+- (void)setMedal:(MedalType)medal
+{
+  _medal = medal;
+  switch (medal) {
+    case MedalBronze:
+      self.medalDisplay.texture = [_atlas textureNamed:@"medalBronze"];
+      break;
+    case MedalSilver:
+      self.medalDisplay.texture = [_atlas textureNamed:@"medalSilver"];
+      break;
+    case MedalGold:
+      self.medalDisplay.texture = [_atlas textureNamed:@"medalGold"];
+      break;
+    default:
+      self.medalDisplay.texture = [_atlas textureNamed:@"medalBlank"];
+      break;
+  }
+}
 @end
