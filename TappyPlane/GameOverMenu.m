@@ -7,10 +7,13 @@
 //
 
 #import "GameOverMenu.h"
+#import "BitmapFontLabel.h"
 
 @interface GameOverMenu()
 @property (nonatomic) SKSpriteNode *medalDisplay;
 @property (nonatomic) SKTextureAtlas *atlas;
+@property (nonatomic) BitmapFontLabel *scoreText;
+@property (nonatomic) BitmapFontLabel *bestScoreText;
 @end
 
 @implementation GameOverMenu
@@ -43,11 +46,25 @@
   scoreTitle.position = CGPointMake(CGRectGetMaxX(panelBackground.frame) -20, CGRectGetMaxY(panelBackground.frame) -10);
   [panelGroup addChild:scoreTitle];
   
+  // Setup score text label
+  _scoreText = [[BitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
+  _scoreText.alignment = BitmapFontAlignmentRight;
+  _scoreText.position = CGPointMake(CGRectGetMaxX(scoreTitle.frame), CGRectGetMinY(scoreTitle.frame) -15);
+  [_scoreText setScale:0.5];
+  [panelGroup addChild:_scoreText];
+  
   // Setup best title
   SKSpriteNode *bestTitle = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"textBest"]];
   bestTitle.anchorPoint = CGPointMake(1.0, 1.0);
   bestTitle.position = CGPointMake(CGRectGetMaxX(panelBackground.frame) -20, CGRectGetMaxY(panelBackground.frame) -60);
   [panelGroup addChild:bestTitle];
+  
+  // Setup bestscore text label
+  _bestScoreText = [[BitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
+  _bestScoreText.alignment = BitmapFontAlignmentRight;
+  _bestScoreText.position = CGPointMake(CGRectGetMaxX(bestTitle.frame), CGRectGetMinY(bestTitle.frame) - 15);
+  [_bestScoreText setScale:0.5];
+  [panelGroup addChild:_bestScoreText];
   
   // Setup medal title
   SKSpriteNode *medalTitle = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"textMedal"]];
@@ -63,8 +80,22 @@
   
   // Set initial values
   self.medal = MedalNone;
+  self.score = 7897;
+  self.bestScore = 350;
   
   return self;
+}
+
+- (void)setScore:(NSInteger)score
+{
+  _score = score;
+  self.scoreText.text = [NSString stringWithFormat:@"%ld", (long)score];
+}
+
+- (void)setBestScore:(NSInteger)bestScore
+{
+  _bestScore = bestScore;
+  self.bestScoreText.text = [NSString stringWithFormat:@"%ld", (long)bestScore];
 }
 
 - (void)setMedal:(MedalType)medal
@@ -85,4 +116,5 @@
       break;
   }
 }
+
 @end
