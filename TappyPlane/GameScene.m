@@ -13,6 +13,13 @@
 #import "ObstacleLayer.h"
 #import "BitmapFontLabel.h"
 #import "TilesetTextureProvider.h"
+#import "GameOverMenu.h"
+
+typedef enum : NSUInteger {
+  GameReady,
+  GameRunning,
+  GameOver,
+} GameState;
 
 @interface GameScene()
 @property (nonatomic) Plane *player;
@@ -22,6 +29,8 @@
 @property (nonatomic) ObstacleLayer *obstacles;
 @property (nonatomic) BitmapFontLabel *scoreLabel;
 @property (nonatomic) NSInteger score;
+@property (nonatomic) GameOverMenu *gameOverMenu;
+@property (nonatomic) GameState gameState;
 @end
 
 static const CGFloat kMinFPS = 10.00 / 60.00;
@@ -83,6 +92,9 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   _scoreLabel = [[BitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
   _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 30);
   [self addChild:_scoreLabel];
+  
+  // Setup game over menu
+  _gameOverMenu = [[GameOverMenu alloc] initWithSize:size];
   
   [self newGame];
   
@@ -157,13 +169,16 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   self.background.position = CGPointZero;
   [self.background layoutTiles];
 
-  // Reset score;
+  // Reset score
   self.score = 0;
   
   // Reset plane
   self.player.position = CGPointMake(self.size.width * 0.3, self.size.height * 0.5);
   self.player.physicsBody.affectedByGravity = NO;
   [self.player reset];
+  
+  // Set game state to ready
+  self.gameState = GameReady;
 }
 
 - (void)setScore:(NSInteger)score
@@ -184,30 +199,30 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-//  for (UITouch *touch in touches) {
-    if (self.player.crashed) {
-      [self newGame];
-    } else {
+  if (self.gameState == GameReady) {
+    self.player.physicsBody.affectedByGravity = YES;
+    self.obstacles.scrolling = YES;
+    self.gameState = GameRunning;
+  }
+  
+  if (self.gameState == GameRunning) {
 #if FLAP
-      [_player flap];
+    [_player flap];
 #else
-      //self.player.engineRunning = !self.player.engineRunning;
-      self.player.accelerating = YES;
+    //self.player.engineRunning = !self.player.engineRunning;
+    self.player.accelerating = YES;
 #endif
-      _player.physicsBody.affectedByGravity = YES;
-      self.obstacles.scrolling = YES;
-    }
-//  }
+  }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-  //for (UITouch *touch in touches) {
+  if (self.gameState == GameRunning) {
 #if !FLAP
-  self.player.accelerating = NO;
-  //self.player.engineRunning = NO;
+    self.player.accelerating = NO;
+    //self.player.engineRunning = NO;
 #endif
-  //}
+  }
 }
 
 #pragma mark SKScene override
@@ -222,7 +237,16 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   lastCallTime = currentTime;
   
   [self.player update];
-  if (!self.player.crashed) {
+  
+  if (self.gameState == GameRunning && self.player.crashed) {
+    // Player just crashed in the last frame
+    self.gameState = GameOver;
+    [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
+    [self addChild:self.gameOverMenu];
+    [self.gameOverMenu show];
+  }
+  
+  if (self.gameState != GameOver) {
     [self.background updateWithTimeElapsed:timeElapsed];
     [self.foreground updateWithTimeElapsed:timeElapsed];
     [self.obstacles updateWithTimeElapsed:timeElapsed];
