@@ -150,13 +150,13 @@
   // group - at the same time, sequence - one after the other
   SKAction *raisePanel = [SKAction group:@[[SKAction fadeInWithDuration:0.4],[SKAction moveByX:0.0 y:100 duration:0.4]]];
   raisePanel.timingMode = SKActionTimingEaseOut;
-  self.panelGroup.alpha = 0.0;
+  self.panelGroup.alpha = 0.001;
   self.panelGroup.position = CGPointMake(self.panelGroup.position.x, self.panelGroup.position.y - 100);
   [self.panelGroup runAction:[SKAction sequence:@[[SKAction waitForDuration:0.7], raisePanel]]];
   
   // Animate play button
   SKAction *fadeInPlayButton = [SKAction sequence:@[[SKAction waitForDuration:1.2], [SKAction fadeInWithDuration:0.4]]];
-  self.playButton.alpha = 0.0;
+  self.playButton.alpha = 0.001;
   self.playButton.userInteractionEnabled = NO;
   [self.playButton runAction:fadeInPlayButton completion:^{
     self.playButton.userInteractionEnabled = YES;
