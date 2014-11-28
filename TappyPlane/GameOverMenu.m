@@ -15,6 +15,7 @@
 @property (nonatomic) SKTextureAtlas *atlas;
 @property (nonatomic) BitmapFontLabel *scoreText;
 @property (nonatomic) BitmapFontLabel *bestScoreText;
+@property (nonatomic) SKSpriteNode *gameOverTitle;
 @end
 
 @implementation GameOverMenu
@@ -28,9 +29,9 @@
   _atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
   
   // Setup game over title text
-  SKSpriteNode *gameOverTitle = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"textGameOver"]];
-  gameOverTitle.position = CGPointMake(size.width * 0.5, size.height - 70);
-  [self addChild:gameOverTitle];
+  _gameOverTitle = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"textGameOver"]];
+  _gameOverTitle.position = CGPointMake(size.width * 0.5, size.height - 70);
+  [self addChild:_gameOverTitle];
   
   // Setup node to act as a group for panel elements
   SKNode *panelGroup = [SKNode node];
@@ -100,7 +101,7 @@
 
 - (void)pressedPlayButton
 {
-  self.score += 1;
+  [self show];
 }
 
 - (void)setScore:(NSInteger)score
@@ -134,4 +135,12 @@
   }
 }
 
+- (void)show
+{
+  // Animate Game Over title text
+  SKAction *dropGameOverText = [SKAction moveByX:0.0 y:-100 duration:0.5];
+  dropGameOverText.timingMode = SKActionTimingEaseOut;
+  self.gameOverTitle.position = CGPointMake(self.gameOverTitle.position.x, self.gameOverTitle.position.y + 100);
+  [self.gameOverTitle runAction:dropGameOverText];
+}
 @end
