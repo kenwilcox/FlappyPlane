@@ -13,7 +13,6 @@
 #import "ObstacleLayer.h"
 #import "BitmapFontLabel.h"
 #import "TilesetTextureProvider.h"
-#import "GameOverMenu.h"
 
 typedef enum : NSUInteger {
   GameReady,
@@ -95,6 +94,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   
   // Setup game over menu
   _gameOverMenu = [[GameOverMenu alloc] initWithSize:size];
+  _gameOverMenu.delegate = self;
   
   [self newGame];
   
@@ -171,6 +171,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 
   // Reset score
   self.score = 0;
+  self.scoreLabel.alpha = 1.0;
   
   // Reset plane
   self.player.position = CGPointMake(self.size.width * 0.3, self.size.height * 0.5);
@@ -185,6 +186,14 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
 {
   _score = score;
   self.scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)score];
+}
+
+#pragma mark GameOverMenu delegate
+
+- (void)pressedStartNewGameButton
+{
+  [self newGame];
+  [self.gameOverMenu removeFromParent];
 }
 
 # pragma mark CollectableDelegate methods
