@@ -252,6 +252,7 @@ static NSString *const kKeyBestScore = @"BestScore";
   SKAction *startNewGame = [SKAction runBlock:^{
     [self newGame];
     [self.gameOverMenu removeFromParent];
+    [self.getReadyMenu show];
   }];
   
   SKAction *fadeTransition = [SKAction sequence:@[[SKAction fadeInWithDuration:0.4], startNewGame, [SKAction fadeOutWithDuration:1.6], [SKAction removeFromParent]]];
@@ -271,6 +272,7 @@ static NSString *const kKeyBestScore = @"BestScore";
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
   if (self.gameState == GameReady) {
+    [self.getReadyMenu hide];
     self.player.physicsBody.affectedByGravity = YES;
     self.obstacles.scrolling = YES;
     self.gameState = GameRunning;
