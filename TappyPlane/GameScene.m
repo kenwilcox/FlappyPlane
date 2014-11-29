@@ -231,8 +231,19 @@ static NSString *const kKeyBestScore = @"BestScore";
 
 - (void)pressedStartNewGameButton
 {
-  [self newGame];
-  [self.gameOverMenu removeFromParent];
+  SKSpriteNode *blackRectangle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:self.size];
+  blackRectangle.anchorPoint = CGPointZero;
+  blackRectangle.alpha = 0.001;
+  blackRectangle.zPosition = 99;
+  [self addChild:blackRectangle];
+  
+  SKAction *startNewGame = [SKAction runBlock:^{
+    [self newGame];
+    [self.gameOverMenu removeFromParent];
+  }];
+  
+  SKAction *fadeTransition = [SKAction sequence:@[[SKAction fadeInWithDuration:0.4], startNewGame, [SKAction fadeOutWithDuration:1.6], [SKAction removeFromParent]]];
+  [blackRectangle runAction:fadeTransition];
 }
 
 # pragma mark CollectableDelegate methods
