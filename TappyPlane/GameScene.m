@@ -13,6 +13,7 @@
 #import "ObstacleLayer.h"
 #import "BitmapFontLabel.h"
 #import "TilesetTextureProvider.h"
+#import "GetReadyMenu.h"
 
 typedef enum : NSUInteger {
   GameReady,
@@ -30,6 +31,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) NSInteger score;
 @property (nonatomic) NSInteger bestScore;
 @property (nonatomic) GameOverMenu *gameOverMenu;
+@property (nonatomic) GetReadyMenu *getReadyMenu;
 @property (nonatomic) GameState gameState;
 @property (nonatomic) NSUserDefaults *defaults;
 @end
@@ -98,6 +100,10 @@ static NSString *const kKeyBestScore = @"BestScore";
   // Setup game over menu
   _gameOverMenu = [[GameOverMenu alloc] initWithSize:size];
   _gameOverMenu.delegate = self;
+  
+  // Setup get ready menu
+  _getReadyMenu = [[GetReadyMenu alloc] initWithSize:size andPlayerPosition:CGPointMake(self.size.width * 0.3, self.size.height * 0.5)];
+  [self addChild:_getReadyMenu];
   
   // Load best score
   _defaults = [NSUserDefaults standardUserDefaults];
