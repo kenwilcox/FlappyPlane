@@ -272,7 +272,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
     if (self.score > self.bestScore) {
       self.bestScore = self.score;
     }
-    self.gameOverMenu.bestScore = self.score;
+    self.gameOverMenu.bestScore = self.bestScore;
     
     [self addChild:self.gameOverMenu];
     [self.gameOverMenu show];
