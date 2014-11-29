@@ -8,6 +8,11 @@
 
 #import "GetReadyMenu.h"
 
+@interface GetReadyMenu()
+@property (nonatomic) SKSpriteNode *getReadyTitle;
+@property (nonatomic) SKTextureAtlas *atlas;
+@end
+
 @implementation GetReadyMenu
 
 - (instancetype)initWithSize:(CGSize)size andPlayerPosition:(CGPoint)playerPosition
@@ -16,6 +21,10 @@
     return nil;
   _size = size;
   
+  _atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
+  _getReadyTitle = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"textGetReady"]];
+  _getReadyTitle.position = CGPointMake(size.width * 0.75, playerPosition.y);
+  [self addChild:_getReadyTitle];
   
   return self;
 }
