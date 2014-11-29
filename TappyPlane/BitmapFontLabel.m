@@ -63,7 +63,7 @@
   // Remove unused nodes
   if (self.text.length < self.children.count) {
     for (NSUInteger i = self.children.count; i > self.text.length; i--) {
-      [self.children[i] removeFromParent];
+      [self.children[i-1] removeFromParent];
     }
   }
   
