@@ -28,6 +28,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) ObstacleLayer *obstacles;
 @property (nonatomic) BitmapFontLabel *scoreLabel;
 @property (nonatomic) NSInteger score;
+@property (nonatomic) NSInteger bestScore;
 @property (nonatomic) GameOverMenu *gameOverMenu;
 @property (nonatomic) GameState gameState;
 @end
@@ -188,6 +189,19 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   self.scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)score];
 }
 
+- (MedalType)getMedalForCurrentScore
+{
+  NSInteger adjustedScore = self.score - (self.bestScore / 5);
+  if (adjustedScore >= 45) {
+    return MedalGold;
+  } else if (adjustedScore >= 25) {
+    return MedalSilver;
+  } else if (adjustedScore >= 10) {
+    return MedalBronze;
+  }
+  return MedalNone;
+}
+
 #pragma mark GameOverMenu delegate
 
 - (void)pressedStartNewGameButton
@@ -251,6 +265,15 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
     // Player just crashed in the last frame
     self.gameState = GameOver;
     [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
+    
+    self.gameOverMenu.score = self.score;
+    // Based on previous best score, not current
+    self.gameOverMenu.medal = [self getMedalForCurrentScore];
+    if (self.score > self.bestScore) {
+      self.bestScore = self.score;
+    }
+    self.gameOverMenu.bestScore = self.score;
+    
     [self addChild:self.gameOverMenu];
     [self.gameOverMenu show];
   }
