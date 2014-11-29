@@ -31,9 +31,11 @@ typedef enum : NSUInteger {
 @property (nonatomic) NSInteger bestScore;
 @property (nonatomic) GameOverMenu *gameOverMenu;
 @property (nonatomic) GameState gameState;
+@property (nonatomic) NSUserDefaults *defaults;
 @end
 
 static const CGFloat kMinFPS = 10.00 / 60.00;
+static NSString *const kKeyBestScore = @"BestScore";
 
 @implementation GameScene
 
@@ -96,6 +98,10 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   // Setup game over menu
   _gameOverMenu = [[GameOverMenu alloc] initWithSize:size];
   _gameOverMenu.delegate = self;
+  
+  // Load best score
+  _defaults = [NSUserDefaults standardUserDefaults];
+  self.bestScore = [_defaults integerForKey:kKeyBestScore];
   
   [self newGame];
   
@@ -183,6 +189,25 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   self.gameState = GameReady;
 }
 
+- (void)gameOver
+{
+  self.gameState = GameOver;
+  [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
+  
+  self.gameOverMenu.score = self.score;
+  // Based on previous best score, not current
+  self.gameOverMenu.medal = [self getMedalForCurrentScore];
+  if (self.score > self.bestScore) {
+    self.bestScore = self.score;
+    [_defaults setInteger:self.bestScore forKey:kKeyBestScore];
+    [_defaults synchronize];
+  }
+  self.gameOverMenu.bestScore = self.bestScore;
+  
+  [self addChild:self.gameOverMenu];
+  [self.gameOverMenu show];
+}
+
 - (void)setScore:(NSInteger)score
 {
   _score = score;
@@ -263,19 +288,7 @@ static const CGFloat kMinFPS = 10.00 / 60.00;
   
   if (self.gameState == GameRunning && self.player.crashed) {
     // Player just crashed in the last frame
-    self.gameState = GameOver;
-    [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
-    
-    self.gameOverMenu.score = self.score;
-    // Based on previous best score, not current
-    self.gameOverMenu.medal = [self getMedalForCurrentScore];
-    if (self.score > self.bestScore) {
-      self.bestScore = self.score;
-    }
-    self.gameOverMenu.bestScore = self.bestScore;
-    
-    [self addChild:self.gameOverMenu];
-    [self.gameOverMenu show];
+    [self gameOver];
   }
   
   if (self.gameState != GameOver) {
