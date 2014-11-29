@@ -208,6 +208,12 @@ static NSString *const kKeyBestScore = @"BestScore";
   [self.gameOverMenu show];
 }
 
+- (void)bump
+{
+  SKAction *bump = [SKAction sequence:@[[SKAction moveBy:CGVectorMake(-5, -4) duration:0.1], [SKAction moveTo:CGPointZero duration:0.1]]];
+  [self.world runAction:bump];
+}
+
 - (void)setScore:(NSInteger)score
 {
   _score = score;
@@ -299,6 +305,7 @@ static NSString *const kKeyBestScore = @"BestScore";
   
   if (self.gameState == GameRunning && self.player.crashed) {
     // Player just crashed in the last frame
+    [self bump];
     [self gameOver];
   }
   
