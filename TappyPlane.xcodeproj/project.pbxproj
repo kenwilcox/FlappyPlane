@@ -10,6 +10,7 @@
 		BE0590EA1A2A3D5800D69830 /* GetReadyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0590E91A2A3D5800D69830 /* GetReadyMenu.m */; };
 		BE0590EC1A2BC0B700D69830 /* SnowEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE0590EB1A2BC0B700D69830 /* SnowEffect.sks */; };
 		BE0590EE1A2BC1AC00D69830 /* RainEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE0590ED1A2BC1AC00D69830 /* RainEffect.sks */; };
+		BE0590F11A2BC30E00D69830 /* WeatherLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0590F01A2BC30E00D69830 /* WeatherLayer.m */; };
 		BE0BEA4B1A02678200EFAA53 /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE0BEA4A1A02678200EFAA53 /* PlaneAnimations.plist */; };
 		BE37C3941A11CA91006632FC /* Collectable.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37C3931A11CA91006632FC /* Collectable.m */; };
 		BE37C3971A11D5C5006632FC /* BitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37C3961A11D5C5006632FC /* BitmapFontLabel.m */; };
@@ -52,6 +53,8 @@
 		BE0590E91A2A3D5800D69830 /* GetReadyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetReadyMenu.m; sourceTree = "<group>"; };
 		BE0590EB1A2BC0B700D69830 /* SnowEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowEffect.sks; sourceTree = "<group>"; };
 		BE0590ED1A2BC1AC00D69830 /* RainEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainEffect.sks; sourceTree = "<group>"; };
+		BE0590EF1A2BC30E00D69830 /* WeatherLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherLayer.h; sourceTree = "<group>"; };
+		BE0590F01A2BC30E00D69830 /* WeatherLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherLayer.m; sourceTree = "<group>"; };
 		BE0BEA4A1A02678200EFAA53 /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
 		BE37C3921A11CA91006632FC /* Collectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collectable.h; sourceTree = "<group>"; };
 		BE37C3931A11CA91006632FC /* Collectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collectable.m; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				BEF829591A114900003EE93B /* ObstacleLayer.m */,
 				BE7344001A0D029900BB04B8 /* ScrollingLayer.h */,
 				BE7344011A0D029900BB04B8 /* ScrollingLayer.m */,
+				BE0590EF1A2BC30E00D69830 /* WeatherLayer.h */,
+				BE0590F01A2BC30E00D69830 /* WeatherLayer.m */,
 				BE7343FD1A0D00BC00BB04B8 /* ScrollingNode.h */,
 				BE7343FE1A0D00BC00BB04B8 /* ScrollingNode.m */,
 				BE416B431A25853D003BE0C1 /* GameOverMenu.h */,
@@ -336,6 +341,7 @@
 			files = (
 				BEF8295A1A114900003EE93B /* ObstacleLayer.m in Sources */,
 				BE51E2D61A22ECF500B987A9 /* Button.m in Sources */,
+				BE0590F11A2BC30E00D69830 /* WeatherLayer.m in Sources */,
 				BEAC54521A01178E00823F1B /* GameViewController.m in Sources */,
 				BE0590EA1A2A3D5800D69830 /* GetReadyMenu.m in Sources */,
 				BEAC544A1A01178E00823F1B /* AppDelegate.m in Sources */,
