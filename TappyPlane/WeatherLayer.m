@@ -36,4 +36,26 @@
   return self;
 }
 
+- (void)setConditions:(WeatherType)conditions
+{
+  if (_conditions != conditions) {
+    _conditions = conditions;
+    
+    [self removeAllChildren];
+    
+    switch (conditions) {
+      case WeatherRaining:
+        [self addChild:self.rainEmitter];
+        break;
+      
+      case WeatherSnowing:
+        [self addChild:self.snowEmitter];
+        break;
+      
+      case WeatherClear:
+        break;
+    }
+  }
+}
+
 @end
