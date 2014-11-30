@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE0590EA1A2A3D5800D69830 /* GetReadyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0590E91A2A3D5800D69830 /* GetReadyMenu.m */; };
+		BE0590EC1A2BC0B700D69830 /* SnowEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE0590EB1A2BC0B700D69830 /* SnowEffect.sks */; };
 		BE0BEA4B1A02678200EFAA53 /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE0BEA4A1A02678200EFAA53 /* PlaneAnimations.plist */; };
 		BE37C3941A11CA91006632FC /* Collectable.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37C3931A11CA91006632FC /* Collectable.m */; };
 		BE37C3971A11D5C5006632FC /* BitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37C3961A11D5C5006632FC /* BitmapFontLabel.m */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		BE0590E81A2A3D5800D69830 /* GetReadyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetReadyMenu.h; sourceTree = "<group>"; };
 		BE0590E91A2A3D5800D69830 /* GetReadyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetReadyMenu.m; sourceTree = "<group>"; };
+		BE0590EB1A2BC0B700D69830 /* SnowEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowEffect.sks; sourceTree = "<group>"; };
 		BE0BEA4A1A02678200EFAA53 /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
 		BE37C3921A11CA91006632FC /* Collectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collectable.h; sourceTree = "<group>"; };
 		BE37C3931A11CA91006632FC /* Collectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collectable.m; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				BE87D58C1A0B2E2100B1B2CA /* PlanePuffTrail.sks */,
+				BE0590EB1A2BC0B700D69830 /* SnowEffect.sks */,
 				BE87D58D1A0B2E2100B1B2CA /* spark.png */,
 			);
 			name = "Particle Effects";
@@ -307,6 +310,7 @@
 				BEAC54901A01288700823F1B /* Graphics.atlas in Resources */,
 				BE0BEA4B1A02678200EFAA53 /* PlaneAnimations.plist in Resources */,
 				BE87D58F1A0B2E2100B1B2CA /* spark.png in Resources */,
+				BE0590EC1A2BC0B700D69830 /* SnowEffect.sks in Resources */,
 				BE87D58E1A0B2E2100B1B2CA /* PlanePuffTrail.sks in Resources */,
 				BEAC54711A0118C300823F1B /* LICENSE in Resources */,
 			);
