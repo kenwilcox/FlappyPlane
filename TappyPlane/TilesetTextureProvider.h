@@ -11,6 +11,8 @@
 
 @interface TilesetTextureProvider : NSObject
 
+@property (nonatomic) NSString *currentTileSetName;
+
 + (instancetype)getProvider;
 
 - (void)randomizeTileset;

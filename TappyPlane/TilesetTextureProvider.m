@@ -40,8 +40,8 @@
 - (void) randomizeTileset
 {
   NSArray *tilesetKeys = [self.tilesets allKeys];
-  NSString *key = tilesetKeys[arc4random_uniform((uint)tilesetKeys.count)];
-  self.currentTileset = self.tilesets[key];
+  self.currentTileSetName = tilesetKeys[arc4random_uniform((uint)tilesetKeys.count)];
+  self.currentTileset = self.tilesets[self.currentTileSetName];
 }
 
 - (SKTexture *)getTextureForKey:(NSString *)key
