@@ -20,4 +20,9 @@ NSString *const kKeyMountainUpAlternate = @"mountainUpAlternate";
 NSString *const kKeyMountainDownAlternate = @"mountainDownAlternate";
 NSString *const kKeyCollectableStar = @"CollectableStar";
 
+NSString *const kTilesetGrass = @"Grass";
+NSString *const kTilesetDirt = @"Dirt";
+NSString *const kTilesetIce = @"Ice";
+NSString *const kTilesetSnow = @"Snow";
+
 @end

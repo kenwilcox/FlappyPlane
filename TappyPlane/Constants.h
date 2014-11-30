@@ -20,4 +20,9 @@ extern NSString *const kKeyMountainUpAlternate;
 extern NSString *const kKeyMountainDownAlternate;
 extern NSString *const kKeyCollectableStar;
 
+extern NSString *const kTilesetGrass;
+extern NSString *const kTilesetDirt;
+extern NSString *const kTilesetIce;
+extern NSString *const kTilesetSnow;
+
 @end
