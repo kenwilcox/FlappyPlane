@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "SoundManager.h"
 
 @class Collectable;
 
@@ -17,7 +18,7 @@
 @end
 
 @interface Collectable : SKSpriteNode
-
+@property (nonatomic) Sound *collectionSound;
 @property (nonatomic, weak) id<CollectableDelegate> delegate;
 @property (nonatomic) NSInteger pointValue;
 
