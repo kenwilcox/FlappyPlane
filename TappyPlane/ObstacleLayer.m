@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "TilesetTextureProvider.h"
 #import "ChallengeProvider.h"
+#import "SoundManager.h"
 
 @interface ObstacleLayer()
 @property (nonatomic) CGFloat marker;
@@ -169,6 +170,7 @@ static const CGFloat kSpaceBetweenObstacleSets = 180.0;
     object = [Collectable spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
     ((Collectable *)object).pointValue = 1;
     ((Collectable *)object).delegate = self.collectableDelegate;
+    ((Collectable*)object).collectionSound = [Sound soundNamed:@"Collect.caf"];
     object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
     object.physicsBody.categoryBitMask = kCategoryCollectable;
     object.physicsBody.dynamic = NO;
