@@ -15,6 +15,7 @@
 #import "TilesetTextureProvider.h"
 #import "GetReadyMenu.h"
 #import "WeatherLayer.h"
+#import "SoundManager.h"
 
 typedef enum : NSUInteger {
   GameReady,
@@ -47,6 +48,9 @@ static NSString *const kKeyBestScore = @"BestScore";
 {
   if (!(self = [super initWithSize:size]))
     return nil;
+  
+  // Init audio
+  [[SoundManager sharedManager] prepareToPlayWithSound:@"Crunch.caf"];
   
   // Set background color to sky blue
   self.backgroundColor = [SKColor colorWithRed:0.835294118 green:0.929411765 blue:0.968627451 alpha:1.0];
