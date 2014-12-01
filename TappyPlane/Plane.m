@@ -9,6 +9,7 @@
 #import "Plane.h"
 #import "Constants.h"
 #import "Collectable.h"
+#import "SoundManager.h"
 
 @interface Plane()
 
@@ -192,6 +193,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     if (body.categoryBitMask == kCategoryGround) {
       self.crashed = YES;
       [self runAction:self.crashTintAction];
+      [[SoundManager sharedManager] playSound:@"Crunch.caf"];
     }
     
     if (body.categoryBitMask == kCategoryCollectable) {
