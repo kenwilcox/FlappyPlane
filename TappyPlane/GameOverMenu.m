@@ -9,6 +9,7 @@
 #import "GameOverMenu.h"
 #import "BitmapFontLabel.h"
 #import "Button.h"
+#import "SoundManager.h"
 
 @interface GameOverMenu()
 @property (nonatomic) SKSpriteNode *medalDisplay;
@@ -90,6 +91,7 @@
   
   // Setup play button
   _playButton = [Button spriteNodeWithTexture:[_atlas textureNamed:@"buttonPlay"]];
+  _playButton.pressedSound = [Sound soundNamed:@"Click.caf"];
   _playButton.position = CGPointMake(CGRectGetMidX(panelBackground.frame), CGRectGetMinY(panelBackground.frame) - 25);
   [_playButton setPressedTarget:self withAction:@selector(pressedPlayButton)];
   [self addChild:_playButton];
