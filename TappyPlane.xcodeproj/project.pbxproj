@@ -34,6 +34,7 @@
 		BEAC54751A0119F800823F1B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC54741A0119F800823F1B /* GameScene.m */; };
 		BEAC54901A01288700823F1B /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BEAC548F1A01288700823F1B /* Graphics.atlas */; };
 		BEB78AD51A012FBA002D2CBF /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB78AD41A012FBA002D2CBF /* Plane.m */; };
+		BEDA86DC1A2C212D0096F65E /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDA86DB1A2C212D0096F65E /* SoundManager.m */; };
 		BEF829571A1129A5003EE93B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF829561A1129A5003EE93B /* Constants.m */; };
 		BEF8295A1A114900003EE93B /* ObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF829591A114900003EE93B /* ObstacleLayer.m */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,8 @@
 		BEAC548F1A01288700823F1B /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 		BEB78AD31A012FBA002D2CBF /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
 		BEB78AD41A012FBA002D2CBF /* Plane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plane.m; sourceTree = "<group>"; };
+		BEDA86DA1A2C212D0096F65E /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundManager.h; path = SoundManager/SoundManager/SoundManager.h; sourceTree = "<group>"; };
+		BEDA86DB1A2C212D0096F65E /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundManager.m; path = SoundManager/SoundManager/SoundManager.m; sourceTree = "<group>"; };
 		BEF829551A1129A5003EE93B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		BEF829561A1129A5003EE93B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		BEF829581A114900003EE93B /* ObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObstacleLayer.h; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 		BEAC54431A01178E00823F1B /* TappyPlane */ = {
 			isa = PBXGroup;
 			children = (
+				BEDA86DD1A2C21350096F65E /* SoundManager */,
 				BE87D58B1A0B2DDF00B1B2CA /* Particle Effects */,
 				BE0BEA4C1A02692800EFAA53 /* Resources */,
 				BEAC548F1A01288700823F1B /* Graphics.atlas */,
@@ -229,6 +233,15 @@
 				BEAC54641A01178E00823F1B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEDA86DD1A2C21350096F65E /* SoundManager */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA86DA1A2C212D0096F65E /* SoundManager.h */,
+				BEDA86DB1A2C212D0096F65E /* SoundManager.m */,
+			);
+			name = SoundManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +367,7 @@
 				BEAC54751A0119F800823F1B /* GameScene.m in Sources */,
 				BEAC54471A01178E00823F1B /* main.m in Sources */,
 				BE37C39C1A11E5BC006632FC /* TilesetTextureProvider.m in Sources */,
+				BEDA86DC1A2C212D0096F65E /* SoundManager.m in Sources */,
 				BE7343FF1A0D00BC00BB04B8 /* ScrollingNode.m in Sources */,
 				BE37C3971A11D5C5006632FC /* BitmapFontLabel.m in Sources */,
 			);

@@ -1,0 +1,3 @@
+[submodule "TappyPlane/SoundManager"]
+	path = TappyPlane/SoundManager
+	url = https://github.com/nicklockwood/SoundManager.git
