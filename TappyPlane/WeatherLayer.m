@@ -46,10 +46,12 @@
     switch (conditions) {
       case WeatherRaining:
         [self addChild:self.rainEmitter];
+        [self.rainEmitter advanceSimulationTime:5];
         break;
       
       case WeatherSnowing:
         [self addChild:self.snowEmitter];
+        [self.rainEmitter advanceSimulationTime:5];
         break;
       
       case WeatherClear:
