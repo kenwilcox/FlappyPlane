@@ -79,7 +79,7 @@ static NSString *const kKeyBestScore = @"BestScore";
   [_world addChild:_background];
   
   // Setup obstacle layer
-  _obstacles = [[ObstacleLayer alloc] init];
+  _obstacles = [[ObstacleLayer alloc] initWithChallenges:YES];
   _obstacles.collectableDelegate = self;
   _obstacles.horizontalScrollSpeed = -70;
   _obstacles.scrolling = YES;
