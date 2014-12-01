@@ -35,6 +35,11 @@
 		BEAC54901A01288700823F1B /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BEAC548F1A01288700823F1B /* Graphics.atlas */; };
 		BEB78AD51A012FBA002D2CBF /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB78AD41A012FBA002D2CBF /* Plane.m */; };
 		BEDA86DC1A2C212D0096F65E /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDA86DB1A2C212D0096F65E /* SoundManager.m */; };
+		BEDA86EF1A2C24310096F65E /* Click.caf in Resources */ = {isa = PBXBuildFile; fileRef = BEDA86EA1A2C24310096F65E /* Click.caf */; };
+		BEDA86F01A2C24310096F65E /* Collect.caf in Resources */ = {isa = PBXBuildFile; fileRef = BEDA86EB1A2C24310096F65E /* Collect.caf */; };
+		BEDA86F11A2C24310096F65E /* Crunch.caf in Resources */ = {isa = PBXBuildFile; fileRef = BEDA86EC1A2C24310096F65E /* Crunch.caf */; };
+		BEDA86F21A2C24310096F65E /* Engine.caf in Resources */ = {isa = PBXBuildFile; fileRef = BEDA86ED1A2C24310096F65E /* Engine.caf */; };
+		BEDA86F31A2C24310096F65E /* Rain.caf in Resources */ = {isa = PBXBuildFile; fileRef = BEDA86EE1A2C24310096F65E /* Rain.caf */; };
 		BEF829571A1129A5003EE93B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF829561A1129A5003EE93B /* Constants.m */; };
 		BEF8295A1A114900003EE93B /* ObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF829591A114900003EE93B /* ObstacleLayer.m */; };
 /* End PBXBuildFile section */
@@ -98,6 +103,11 @@
 		BEB78AD41A012FBA002D2CBF /* Plane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plane.m; sourceTree = "<group>"; };
 		BEDA86DA1A2C212D0096F65E /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundManager.h; path = SoundManager/SoundManager/SoundManager.h; sourceTree = "<group>"; };
 		BEDA86DB1A2C212D0096F65E /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundManager.m; path = SoundManager/SoundManager/SoundManager.m; sourceTree = "<group>"; };
+		BEDA86EA1A2C24310096F65E /* Click.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Click.caf; sourceTree = "<group>"; };
+		BEDA86EB1A2C24310096F65E /* Collect.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Collect.caf; sourceTree = "<group>"; };
+		BEDA86EC1A2C24310096F65E /* Crunch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crunch.caf; sourceTree = "<group>"; };
+		BEDA86ED1A2C24310096F65E /* Engine.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Engine.caf; sourceTree = "<group>"; };
+		BEDA86EE1A2C24310096F65E /* Rain.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rain.caf; sourceTree = "<group>"; };
 		BEF829551A1129A5003EE93B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		BEF829561A1129A5003EE93B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		BEF829581A114900003EE93B /* ObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObstacleLayer.h; sourceTree = "<group>"; };
@@ -165,6 +175,7 @@
 		BEAC54431A01178E00823F1B /* TappyPlane */ = {
 			isa = PBXGroup;
 			children = (
+				BEDA86E91A2C24310096F65E /* Sounds */,
 				BEDA86DD1A2C21350096F65E /* SoundManager */,
 				BE87D58B1A0B2DDF00B1B2CA /* Particle Effects */,
 				BE0BEA4C1A02692800EFAA53 /* Resources */,
@@ -242,6 +253,18 @@
 				BEDA86DB1A2C212D0096F65E /* SoundManager.m */,
 			);
 			name = SoundManager;
+			sourceTree = "<group>";
+		};
+		BEDA86E91A2C24310096F65E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA86EA1A2C24310096F65E /* Click.caf */,
+				BEDA86EB1A2C24310096F65E /* Collect.caf */,
+				BEDA86EC1A2C24310096F65E /* Crunch.caf */,
+				BEDA86ED1A2C24310096F65E /* Engine.caf */,
+				BEDA86EE1A2C24310096F65E /* Rain.caf */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,16 +348,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAC545A1A01178E00823F1B /* LaunchScreen.xib in Resources */,
+				BEDA86F01A2C24310096F65E /* Collect.caf in Resources */,
 				BE37C3991A11E32E006632FC /* TilesetGraphics.plist in Resources */,
 				BEAC54571A01178E00823F1B /* Images.xcassets in Resources */,
 				BE0590EE1A2BC1AC00D69830 /* RainEffect.sks in Resources */,
+				BEDA86F11A2C24310096F65E /* Crunch.caf in Resources */,
 				BEAC54551A01178E00823F1B /* Main.storyboard in Resources */,
 				BEAC54901A01288700823F1B /* Graphics.atlas in Resources */,
 				BE0BEA4B1A02678200EFAA53 /* PlaneAnimations.plist in Resources */,
+				BEDA86EF1A2C24310096F65E /* Click.caf in Resources */,
+				BEDA86F31A2C24310096F65E /* Rain.caf in Resources */,
 				BE87D58F1A0B2E2100B1B2CA /* spark.png in Resources */,
 				BE0590EC1A2BC0B700D69830 /* SnowEffect.sks in Resources */,
 				BE87D58E1A0B2E2100B1B2CA /* PlanePuffTrail.sks in Resources */,
 				BEAC54711A0118C300823F1B /* LICENSE in Resources */,
+				BEDA86F21A2C24310096F65E /* Engine.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

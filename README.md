@@ -7,6 +7,19 @@ Added bodyWithEdgeChainFromPath by using [SKPhysicsBody Path Generator](http://d
 
 Added [SoundManager](https://github.com/nicklockwood/SoundManager) as a submodule
 
+Sounds
+------
+Thanks to the folks who made the following sounds:
+
+Engine sound by [wellalbee1](https://www.freesound.org/people/wellalbee1/sounds/182786/)
+
+(Base)Crash sound by [jih](https://www.freesound.org/people/jih/sounds/57659/)
+
+Star Collect sound by [soundnimja](https://www.freesound.org/people/soundnimja/sounds/173323/)
+
+Button Click sound by [KorgMS2000B](https://www.freesound.org/people/KorgMS2000B/sounds/54405/)
+
+Rain Sound by [mlaramie](https://www.freesound.org/people/mlaramie/sounds/193875/)
 
 Misc
 ----
