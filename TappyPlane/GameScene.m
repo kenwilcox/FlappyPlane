@@ -14,6 +14,7 @@
 #import "BitmapFontLabel.h"
 #import "TilesetTextureProvider.h"
 #import "GetReadyMenu.h"
+#import "WeatherLayer.h"
 
 typedef enum : NSUInteger {
   GameReady,
@@ -27,6 +28,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) ScrollingLayer *background;
 @property (nonatomic) ScrollingLayer *foreground;
 @property (nonatomic) ObstacleLayer *obstacles;
+@property (nonatomic) WeatherLayer *weather;
 @property (nonatomic) BitmapFontLabel *scoreLabel;
 @property (nonatomic) NSInteger score;
 @property (nonatomic) NSInteger bestScore;
@@ -91,6 +93,10 @@ static NSString *const kKeyBestScore = @"BestScore";
   _player = [[Plane alloc] init];
   _player.physicsBody.affectedByGravity = NO;
   [_world addChild:_player];
+  
+  // Setup weather
+  _weather = [[WeatherLayer alloc] initWithSize:self.size];
+  [_world addChild:_weather];
   
   // Setup score label
   _scoreLabel = [[BitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
@@ -166,6 +172,23 @@ static NSString *const kKeyBestScore = @"BestScore";
 {
   // Randomize tileset
   [[TilesetTextureProvider getProvider] randomizeTileset];
+  
+  // Set weather conditions
+  NSString *tilesetName = [TilesetTextureProvider getProvider].currentTileSetName;
+  self.weather.conditions = WeatherClear;
+  if ([tilesetName isEqualToString:kTilesetIce] || [tilesetName isEqualToString:kTilesetSnow]) {
+    // 50% chance of snow
+    if (arc4random_uniform(2) == 0) {
+      self.weather.conditions = WeatherSnowing;
+    }
+  }
+  
+  if ([tilesetName isEqualToString:kTilesetGrass] || [tilesetName isEqualToString:kTilesetDirt]) {
+    // 33% chance of rain
+    if (arc4random_uniform(3) == 0) {
+      self.weather.conditions = WeatherRaining;
+    }
+  }
   
   // Reset layers
   self.foreground.position = CGPointZero;
