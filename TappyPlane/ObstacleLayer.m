@@ -171,6 +171,7 @@ static const CGFloat kSpaceBetweenObstacleSets = 180.0;
     ((Collectable *)object).pointValue = 1;
     ((Collectable *)object).delegate = self.collectableDelegate;
     ((Collectable*)object).collectionSound = [Sound soundNamed:@"Collect.caf"];
+    ((Collectable*)object).collectionSound.volume = 0.4;
     object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
     object.physicsBody.categoryBitMask = kCategoryCollectable;
     object.physicsBody.dynamic = NO;

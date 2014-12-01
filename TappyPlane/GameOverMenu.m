@@ -92,6 +92,7 @@
   // Setup play button
   _playButton = [Button spriteNodeWithTexture:[_atlas textureNamed:@"buttonPlay"]];
   _playButton.pressedSound = [Sound soundNamed:@"Click.caf"];
+  _playButton.pressedSound.volume = 0.4;
   _playButton.position = CGPointMake(CGRectGetMidX(panelBackground.frame), CGRectGetMinY(panelBackground.frame) - 25);
   [_playButton setPressedTarget:self withAction:@selector(pressedPlayButton)];
   [self addChild:_playButton];
